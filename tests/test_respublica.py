@@ -54,6 +54,8 @@ class ProductPage:
 
 class CartPage:
     def __init__(self):
+        self.all_item_counts = browser.all('.count-input')
+        self.all_checkboxes = browser.all('[type=checkbox]')
         self.all_item_names = browser.all('.item-name')
         self.item_count = browser.element('.count-input')
         self.item_name = browser.element('.item-name')
@@ -67,12 +69,6 @@ class CartPage:
         # if browser.element('.delete-selected').matching(have.title('Удалить выбранные')):
         browser.element('.delete-selected').click()
         browser.element('.deleted-button').click()
-
-    def all_checkboxes(self, i):
-        return browser.all('[type=checkbox]')[i]
-
-    def all_item_counts(self, i):
-        return browser.element('.count-input')
 
 
 def test_login():
@@ -158,12 +154,12 @@ def test_add_multiple_different_items_to_cart(clear_cart_when_finished):
 
     # THEN
     cart_page.all_items_counter.should(have.text(f'({items} товара)'))
-    cart_page.checkbox.should(have.value('true'))
-    for i in range(items):
-        cart_page.all_checkboxes(i).should(have.value('true'))
+    list_of_all_checkbox_statuses = ['true' for _ in range(items)]
+    cart_page.all_checkboxes.should(have.values(*list_of_all_checkbox_statuses))
     cart_page.all_item_names.should(have.texts(*reversed(products)))
-    for i in range(items):
-        cart_page.all_item_counts(i).should(have.value(f'{amount_of_item}'))
+    list_of_all_individual_item_amounts = ['1' for _ in range(items)]
+    # for i in range(items):
+    cart_page.all_item_counts.should(have.values(*list_of_all_individual_item_amounts))
 
 
 def test_delete_item_from_cart():

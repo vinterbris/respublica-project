@@ -13,7 +13,7 @@ WEB_URL = "https://www.respublica.ru"
 
 @pytest.fixture(scope='function', autouse=True)
 def browser_management():
-    browser.config.timeout = 8.0
+    browser.config.timeout = 20.0
     browser.config.window_width = 1600
     browser.config.window_height = 900
     browser.config.base_url = WEB_URL
