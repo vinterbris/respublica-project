@@ -4,7 +4,7 @@ import pytest
 from selene import browser, have
 from selenium import webdriver
 
-from tests.test_respublica import CartPage
+from respublica.pages.cart_page import CartPage
 from utils import attach
 from selenium.webdriver.chrome.options import Options
 
@@ -13,7 +13,7 @@ WEB_URL = "https://www.respublica.ru"
 
 @pytest.fixture(scope='function', autouse=True)
 def browser_management():
-    browser.config.timeout = 20.0
+    browser.config.timeout = 8.0
     browser.config.window_width = 1600
     browser.config.window_height = 900
     browser.config.base_url = WEB_URL
@@ -58,4 +58,4 @@ def clear_cart_when_finished():
 
     cart_page = CartPage()
     cart_page.clear_cart()
-    browser.element('.cart-none-title').should(have.text('В вашей корзине еще нет товаров'))
+    cart_page.check_is_cart_empty()
