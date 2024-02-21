@@ -76,7 +76,7 @@ def test_add_multiple_different_items_to_cart(clear_cart_when_finished):
         'Блокнот \"Master Classic\" A4+, 117 листов, в линейку, черный',
         'Блокнот Leuchtturm1917 Medium, A5, 125л, без линовки, Лобстер'
     )
-    items = len(products)
+    total_amount_of_items = len(products)
 
     # WHEN
     header.login()
@@ -88,14 +88,14 @@ def test_add_multiple_different_items_to_cart(clear_cart_when_finished):
     product_page.go_to_cart()
 
     # THEN
-    cart_page.all_items_counter.should(have.text(f'({items} товара)'))
+    cart_page.all_items_counter.should(have.text(f'({total_amount_of_items} товара)'))
 
-    list_of_all_checkbox_statuses = ['true' for _ in range(items)]
+    list_of_all_checkbox_statuses = ['true' for _ in range(total_amount_of_items)]
     cart_page.all_checkboxes.should(have.values(*list_of_all_checkbox_statuses))
 
     cart_page.all_item_names.should(have.texts(*reversed(products)))
 
-    list_of_all_individual_item_amounts = ['1' for _ in range(items)]
+    list_of_all_individual_item_amounts = ['1' for _ in range(total_amount_of_items)]
     cart_page.all_item_counts.should(have.values(*list_of_all_individual_item_amounts))
 
 
