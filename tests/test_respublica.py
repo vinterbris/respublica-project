@@ -1,10 +1,10 @@
 from selene import have, be
 
-from respublica.pages.cart_page import CartPage
-from respublica.pages.header import Header
-from respublica.pages.product_page import ProductPage
-from respublica.pages.search_page import SearchPage
-from respublica.resources import add_item_to_cart
+from respublica_tests.pages.cart_page import CartPage
+from respublica_tests.pages.header import Header
+from respublica_tests.pages.product_page import ProductPage
+from respublica_tests.pages.search_page import SearchPage
+from respublica_tests.resources import add_item_to_cart
 
 PRODUCT_NAME = 'Блокнот нелинованный \"Master Classic\" черный A4+'
 

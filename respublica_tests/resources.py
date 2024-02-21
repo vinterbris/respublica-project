@@ -1,6 +1,6 @@
-from respublica.pages.header import Header
-from respublica.pages.product_page import ProductPage
-from respublica.pages.search_page import SearchPage
+from respublica_tests.pages.header import Header
+from respublica_tests.pages.product_page import ProductPage
+from respublica_tests.pages.search_page import SearchPage
 
 
 def add_item_to_cart(product_name):

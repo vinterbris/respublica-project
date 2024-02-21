@@ -1,7 +1,7 @@
 import pytest
 from selene import browser
 
-from respublica.pages.cart_page import CartPage
+from respublica_tests.pages.cart_page import CartPage
 from utils import attach
 
 WEB_URL = "https://www.respublica.ru"
