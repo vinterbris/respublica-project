@@ -1,4 +1,4 @@
-from selene import browser, have
+from selene import browser, have, be
 
 from respublica.pages.header import Header
 
@@ -28,3 +28,6 @@ class CartPage:
 
     def check_is_cart_empty(self):
         browser.element('.cart-none-title').should(have.text('В вашей корзине еще нет товаров'))
+
+    def cart_has_items(self):
+        return browser.element('.cart-none-title').matching(be.absent)

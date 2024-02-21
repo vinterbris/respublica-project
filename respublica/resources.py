@@ -8,7 +8,7 @@ def add_item_to_cart(product_name):
     search_page = SearchPage()
     product_page = ProductPage()
 
-    header.login()
+    header.login_if_not_logged_in()
     header.search(product_name)
     search_page.select_product(product_name)
     product_page.add_to_cart()

@@ -12,7 +12,7 @@ PRODUCT_NAME = 'Блокнот нелинованный \"Master Classic\" че�
 def test_login():
     header = Header()
 
-    header.login()
+    header.login_initial()
     header.open_profile_panel()
 
     header.profile.should(have.text('Профиль'))
@@ -28,7 +28,7 @@ def test_add_single_item_to_cart(clear_cart_when_finished):
     amount_of_item = 1
 
     # WHEN
-    header.login()
+    header.login_if_not_logged_in()
     header.search(PRODUCT_NAME)
     search_page.select_product(PRODUCT_NAME)
     product_page.add_to_cart()
@@ -51,7 +51,7 @@ def test_add_multiple_items_to_cart(clear_cart_when_finished):
     amount_of_item = 4
 
     # WHEN
-    header.login()
+    header.login_if_not_logged_in()
     header.search(PRODUCT_NAME)
     search_page.select_product(PRODUCT_NAME)
     product_page.add_to_cart()
@@ -79,7 +79,7 @@ def test_add_multiple_different_items_to_cart(clear_cart_when_finished):
     total_amount_of_items = len(products)
 
     # WHEN
-    header.login()
+    header.login_if_not_logged_in()
     for product in products:
         header.search(product)
         search_page.select_product(product)
