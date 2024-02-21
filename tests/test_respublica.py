@@ -121,10 +121,3 @@ def test_clear_cart():
     # THEN
     cart_page.empty.should(have.text('В вашей корзине еще нет товаров'))
 
-
-def test_add_to_favorites():
-    pass
-
-
-def test_remove_from_favorites():
-    pass
