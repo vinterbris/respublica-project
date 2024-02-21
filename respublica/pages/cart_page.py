@@ -5,6 +5,7 @@ from respublica.pages.header import Header
 
 class CartPage:
     def __init__(self):
+        self.empty = browser.element('.cart-none-title')
         self.total_items = browser.element('.cart-order-item-title')
         self.all_item_counts = browser.all('.count-input')
         self.all_checkboxes = browser.all('[type=checkbox]')

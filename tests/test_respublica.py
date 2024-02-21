@@ -1,9 +1,12 @@
-from selene import have, be, browser
+from selene import have, be
 
 from respublica.pages.cart_page import CartPage
 from respublica.pages.header import Header
 from respublica.pages.product_page import ProductPage
 from respublica.pages.search_page import SearchPage
+from respublica.resources import add_item_to_cart
+
+PRODUCT_NAME = 'Блокнот нелинованный \"Master Classic\" черный A4+'
 
 
 def test_login():
@@ -23,19 +26,18 @@ def test_add_single_item_to_cart(clear_cart_when_finished):
 
     items = 1
     amount_of_item = 1
-    product_name = 'Блокнот нелинованный \"Master Classic\" черный A4+'
 
     # WHEN
     header.login()
-    header.search(product_name)
-    search_page.select_product(product_name)
+    header.search(PRODUCT_NAME)
+    search_page.select_product(PRODUCT_NAME)
     product_page.add_to_cart()
     product_page.go_to_cart()
 
     # THEN
     cart_page.all_items_counter.should(have.text(f'({items} товар)'))
     cart_page.checkbox.should(have.value('true'))
-    cart_page.item_name.should(have.text(product_name))
+    cart_page.item_name.should(have.text(PRODUCT_NAME))
     cart_page.item_count.should(have.value(f'{amount_of_item}'))
 
 
@@ -47,12 +49,11 @@ def test_add_multiple_items_to_cart(clear_cart_when_finished):
 
     items = 1
     amount_of_item = 4
-    product_name = 'Блокнот нелинованный \"Master Classic\" черный A4+'
 
     # WHEN
     header.login()
-    header.search(product_name)
-    search_page.select_product(product_name)
+    header.search(PRODUCT_NAME)
+    search_page.select_product(PRODUCT_NAME)
     product_page.add_to_cart()
     product_page.increase_amount_by(amount_of_item - 1)
     product_page.go_to_cart()
@@ -60,7 +61,7 @@ def test_add_multiple_items_to_cart(clear_cart_when_finished):
     # THEN
     cart_page.all_items_counter.should(have.text(f'({items} товар)'))
     cart_page.checkbox.should(have.value('true'))
-    cart_page.item_name.should(have.text(product_name))
+    cart_page.item_name.should(have.text(PRODUCT_NAME))
     cart_page.item_count.should(have.value(f'{amount_of_item}'))
 
 
@@ -99,17 +100,10 @@ def test_add_multiple_different_items_to_cart(clear_cart_when_finished):
 
 
 def test_delete_item_from_cart():
-    header = Header()
-    search_page = SearchPage()
-    product_page = ProductPage()
     cart_page = CartPage()
 
-    items = 1
-    amount_of_item = 1
-    product_name = 'Блокнот нелинованный \"Master Classic\" черный A4+'
-
     # WHEN
-    add_item_to_cart(header, product_name, product_page, search_page)
+    add_item_to_cart(PRODUCT_NAME)
     cart_page.remove_first_item()
 
     # THEN
@@ -117,16 +111,15 @@ def test_delete_item_from_cart():
     cart_page.total_items.should(have.text('Товары (0)'))
 
 
-def add_item_to_cart(header, product_name, product_page, search_page):
-    header.login()
-    header.search(product_name)
-    search_page.select_product(product_name)
-    product_page.add_to_cart()
-    product_page.go_to_cart()
-
-
 def test_clear_cart():
-    pass
+    cart_page = CartPage()
+
+    # WHEN
+    add_item_to_cart(PRODUCT_NAME)
+    cart_page.clear_cart()
+
+    # THEN
+    cart_page.empty.should(have.text('В вашей корзине еще нет товаров'))
 
 
 def test_add_to_favorites():
