@@ -5,6 +5,8 @@ from respublica_tests.components.header import Header
 
 class CartPage:
     def __init__(self):
+        self._confirm_clear_cart = browser.element('.deleted-button')
+        self._button_clear_cart = browser.element('.delete-selected')
         self.empty = browser.element('.cart-none-title')
         self.total_items = browser.element('.cart-order-item-title')
         self.all_item_counts = browser.all('.count-input')
@@ -19,15 +21,14 @@ class CartPage:
         header = Header()
 
         header.go_to_cart()
-        # if browser.element('.delete-selected').matching(have.title('Удалить выбранные')):
-        browser.element('.delete-selected').click()
-        browser.element('.deleted-button').click()
+        self._button_clear_cart.click()
+        self._confirm_clear_cart.click()
 
     def remove_first_item(self):
-        browser.element('[type=checkbox]').with_(click_by_js=True).click()
+        self.checkbox.with_(click_by_js=True).click()
 
     def check_is_cart_empty(self):
-        browser.element('.cart-none-title').should(have.text('В вашей корзине еще нет товаров'))
+        self.empty.should(have.text('В вашей корзине еще нет товаров'))
 
     def cart_has_items(self):
-        return browser.element('.cart-none-title').matching(be.absent)
+        return self.empty.matching(be.absent)
