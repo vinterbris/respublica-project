@@ -4,6 +4,7 @@ import pytest
 from selene import browser
 from selenium import webdriver
 
+from respublica_tests.application import app
 from respublica_tests.pages.cart_page import CartPage
 from utils import attach
 from selenium.webdriver.chrome.options import Options
@@ -54,10 +55,9 @@ def browser_management():
 
 @pytest.fixture(scope='function')
 def clear_cart_when_finished():
-    cart_page = CartPage()
 
     yield
 
-    if cart_page.cart_has_items():
-        cart_page.clear_cart()
-        cart_page.check_is_cart_empty()
+    if app.cart_page.cart_has_items():
+        app.cart_page.clear_cart()
+        app.cart_page.check_is_cart_empty()

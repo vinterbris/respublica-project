@@ -15,7 +15,7 @@ def test_login():
     app.header.login_initial()
     app.header.open_profile_panel()
 
-    app.header.profile.should(have.text('Профиль'))
+    app.header._button_profile.should(have.text('Профиль'))
 
 
 def test_add_single_item_to_cart(clear_cart_when_finished):

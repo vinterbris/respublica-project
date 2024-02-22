@@ -1,3 +1,5 @@
+from selene import browser
+
 from respublica_tests.pages.cart_page import CartPage
 from respublica_tests.components.header import Header
 from respublica_tests.pages.product_page import ProductPage
@@ -10,6 +12,9 @@ class Application:
         self.search_page = SearchPage()
         self.product_page = ProductPage()
         self.cart_page = CartPage()
+
+    def open(self):
+        browser.open('/')
 
 
 app = Application()
