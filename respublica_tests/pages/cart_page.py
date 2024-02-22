@@ -1,6 +1,6 @@
 from selene import browser, have, be
 
-from respublica_tests.pages.header import Header
+from respublica_tests.components.header import Header
 
 
 class CartPage:

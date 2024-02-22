@@ -1,4 +1,4 @@
-from respublica_tests.pages.header import Header
+from respublica_tests.components.header import Header
 from respublica_tests.pages.product_page import ProductPage
 from respublica_tests.pages.search_page import SearchPage
 

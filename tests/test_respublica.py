@@ -1,123 +1,98 @@
 from selene import have, be
 
-from respublica_tests.pages.cart_page import CartPage
-from respublica_tests.pages.header import Header
-from respublica_tests.pages.product_page import ProductPage
-from respublica_tests.pages.search_page import SearchPage
-from respublica_tests.resources import add_item_to_cart
+from respublica_tests.application import app
+from respublica_tests.e2e import add_item_to_cart
 
 PRODUCT_NAME = 'Блокнот нелинованный \"Master Classic\" черный A4+'
+PRODUCTS = (
+    'Блокнот нелинованный \"Master Classic\" черный A4+',
+    'Блокнот \"Master Classic\" A4+, 117 листов, в линейку, черный',
+    'Блокнот Leuchtturm1917 Medium, A5, 125л, без линовки, Лобстер'
+)
 
 
 def test_login():
-    header = Header()
+    app.header.login_initial()
+    app.header.open_profile_panel()
 
-    header.login_initial()
-    header.open_profile_panel()
-
-    header.profile.should(have.text('Профиль'))
+    app.header.profile.should(have.text('Профиль'))
 
 
 def test_add_single_item_to_cart(clear_cart_when_finished):
-    header = Header()
-    search_page = SearchPage()
-    product_page = ProductPage()
-    cart_page = CartPage()
-
     items = 1
     amount_of_item = 1
 
     # WHEN
-    header.login_if_not_logged_in()
-    header.search(PRODUCT_NAME)
-    search_page.select_product(PRODUCT_NAME)
-    product_page.add_to_cart()
-    product_page.go_to_cart()
+    app.header.login_if_not_logged_in()
+    app.header.search(PRODUCT_NAME)
+    app.search_page.select_product(PRODUCT_NAME)
+    app.product_page.add_to_cart()
+    app.product_page.go_to_cart()
 
     # THEN
-    cart_page.all_items_counter.should(have.text(f'({items} товар)'))
-    cart_page.checkbox.should(have.value('true'))
-    cart_page.item_name.should(have.text(PRODUCT_NAME))
-    cart_page.item_count.should(have.value(f'{amount_of_item}'))
+    app.cart_page.all_items_counter.should(have.text(f'({items} товар)'))
+    app.cart_page.checkbox.should(have.value('true'))
+    app.cart_page.item_name.should(have.text(PRODUCT_NAME))
+    app.cart_page.item_count.should(have.value(f'{amount_of_item}'))
 
 
 def test_add_multiple_items_to_cart(clear_cart_when_finished):
-    header = Header()
-    search_page = SearchPage()
-    product_page = ProductPage()
-    cart_page = CartPage()
-
     items = 1
     amount_of_item = 4
 
     # WHEN
-    header.login_if_not_logged_in()
-    header.search(PRODUCT_NAME)
-    search_page.select_product(PRODUCT_NAME)
-    product_page.add_to_cart()
-    product_page.increase_amount_by(amount_of_item - 1)
-    product_page.go_to_cart()
+    app.header.login_if_not_logged_in()
+    app.header.search(PRODUCT_NAME)
+    app.search_page.select_product(PRODUCT_NAME)
+    app.product_page.add_to_cart()
+    app.product_page.increase_amount_by(amount_of_item - 1)
+    app.product_page.go_to_cart()
 
     # THEN
-    cart_page.all_items_counter.should(have.text(f'({items} товар)'))
-    cart_page.checkbox.should(have.value('true'))
-    cart_page.item_name.should(have.text(PRODUCT_NAME))
-    cart_page.item_count.should(have.value(f'{amount_of_item}'))
+    app.cart_page.all_items_counter.should(have.text(f'({items} товар)'))
+    app.cart_page.checkbox.should(have.value('true'))
+    app.cart_page.item_name.should(have.text(PRODUCT_NAME))
+    app.cart_page.item_count.should(have.value(f'{amount_of_item}'))
 
 
 def test_add_multiple_different_items_to_cart(clear_cart_when_finished):
-    header = Header()
-    search_page = SearchPage()
-    product_page = ProductPage()
-    cart_page = CartPage()
-
-    products = (
-        'Блокнот нелинованный \"Master Classic\" черный A4+',
-        'Блокнот \"Master Classic\" A4+, 117 листов, в линейку, черный',
-        'Блокнот Leuchtturm1917 Medium, A5, 125л, без линовки, Лобстер'
-    )
-    total_amount_of_items = len(products)
+    total_amount_of_items = len(PRODUCTS)
 
     # WHEN
-    header.login_if_not_logged_in()
-    for product in products:
-        header.search(product)
-        search_page.select_product(product)
-        product_page.add_to_cart()
-        product_page.checkout.wait_until(be.visible)
-    product_page.go_to_cart()
+    app.header.login_if_not_logged_in()
+    for product in PRODUCTS:
+        app.header.search(product)
+        app.search_page.select_product(product)
+        app.product_page.add_to_cart()
+        app.product_page.checkout.wait_until(be.visible)
+    app.product_page.go_to_cart()
 
     # THEN
-    cart_page.all_items_counter.should(have.text(f'({total_amount_of_items} товара)'))
+    app.cart_page.all_items_counter.should(have.text(f'({total_amount_of_items} товара)'))
 
     list_of_all_checkbox_statuses = ['true' for _ in range(total_amount_of_items)]
-    cart_page.all_checkboxes.should(have.values(*list_of_all_checkbox_statuses))
+    app.cart_page.all_checkboxes.should(have.values(*list_of_all_checkbox_statuses))
 
-    cart_page.all_item_names.should(have.texts(*reversed(products)))
+    app.cart_page.all_item_names.should(have.texts(*reversed(PRODUCTS)))
 
     list_of_all_individual_item_amounts = ['1' for _ in range(total_amount_of_items)]
-    cart_page.all_item_counts.should(have.values(*list_of_all_individual_item_amounts))
+    app.cart_page.all_item_counts.should(have.values(*list_of_all_individual_item_amounts))
 
 
 def test_delete_item_from_cart():
-    cart_page = CartPage()
-
     # WHEN
     add_item_to_cart(PRODUCT_NAME)
-    cart_page.remove_first_item()
+    app.cart_page.remove_first_item()
 
     # THEN
-    cart_page.checkbox.should(have.value('false'))
-    cart_page.total_items.should(have.text('Товары (0)'))
+    app.cart_page.checkbox.should(have.value('false'))
+    app.cart_page.total_items.should(have.text('Товары (0)'))
 
 
 def test_clear_cart():
-    cart_page = CartPage()
-
     # WHEN
     add_item_to_cart(PRODUCT_NAME)
-    cart_page.clear_cart()
+    app.cart_page.clear_cart()
 
     # THEN
-    cart_page.empty.should(have.text('В вашей корзине еще нет товаров'))
-
+    app.cart_page.empty.should(have.text('В вашей корзине еще нет товаров'))
