@@ -20,7 +20,7 @@ def test_login():
 
 def test_add_single_item_to_cart(clear_cart_when_finished):
     items = 1
-    amount_of_item = 1
+    amount_per_item = 1
 
     # WHEN
     app.header.login_if_not_logged_in()
@@ -33,26 +33,26 @@ def test_add_single_item_to_cart(clear_cart_when_finished):
     app.cart_page.all_items_counter.should(have.text(f'({items} товар)'))
     app.cart_page.checkbox.should(have.value('true'))
     app.cart_page.item_name.should(have.text(PRODUCT_NAME))
-    app.cart_page.item_count.should(have.value(f'{amount_of_item}'))
+    app.cart_page.item_count.should(have.value(f'{amount_per_item}'))
 
 
 def test_add_multiple_items_to_cart(clear_cart_when_finished):
     items = 1
-    amount_of_item = 4
+    amount_per_item = 4
 
     # WHEN
     app.header.login_if_not_logged_in()
     app.header.search(PRODUCT_NAME)
     app.search_page.select_product(PRODUCT_NAME)
     app.product_page.add_to_cart()
-    app.product_page.increase_amount_by(amount_of_item - 1)
+    app.product_page.increase_amount_by(amount_per_item - 1)
     app.product_page.go_to_cart()
 
     # THEN
     app.cart_page.all_items_counter.should(have.text(f'({items} товар)'))
     app.cart_page.checkbox.should(have.value('true'))
     app.cart_page.item_name.should(have.text(PRODUCT_NAME))
-    app.cart_page.item_count.should(have.value(f'{amount_of_item}'))
+    app.cart_page.item_count.should(have.value(f'{amount_per_item}'))
 
 
 def test_add_multiple_different_items_to_cart(clear_cart_when_finished):
