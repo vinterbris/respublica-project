@@ -2,6 +2,8 @@ import os
 
 from selene import browser, be, have
 
+from respublica_tests.pages.loading_page import LoadingPage
+
 
 class Header:
 
@@ -32,9 +34,13 @@ class Header:
 
     def search(self, search_name):
         self._field_search.type(search_name).press_enter()
+        loading_page = LoadingPage()
+        loading_page.wait_until_finished()
 
     def go_to_cart(self):
         self._button_cart.click()
+        loading_page = LoadingPage()
+        loading_page.wait_until_finished()
 
     def check_is_cart_empty(self):
         self._cart_item_counter.should(have.text('0'))

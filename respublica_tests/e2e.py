@@ -1,15 +1,9 @@
-from respublica_tests.components.header import Header
-from respublica_tests.pages.product_page import ProductPage
-from respublica_tests.pages.search_page import SearchPage
+from respublica_tests.application import app
 
 
 def add_item_to_cart(product_name):
-    header = Header()
-    search_page = SearchPage()
-    product_page = ProductPage()
-
-    header.login_if_not_logged_in()
-    header.search(product_name)
-    search_page.select_product(product_name)
-    product_page.add_to_cart()
-    product_page.go_to_cart()
+    app.header.login_if_not_logged_in()
+    app.header.search(product_name)
+    app.search_page.select_product(product_name)
+    app.product_page.add_to_cart()
+    app.product_page.go_to_cart()

@@ -1,4 +1,4 @@
-from selene import have, be
+from selene import have, be, browser
 
 from respublica_tests.application import app
 from respublica_tests.e2e import add_item_to_cart
@@ -7,7 +7,7 @@ PRODUCT_NAME = 'Блокнот нелинованный \"Master Classic\" че�
 PRODUCTS = (
     'Блокнот нелинованный \"Master Classic\" черный A4+',
     'Блокнот \"Master Classic\" A4+, 117 листов, в линейку, черный',
-    'Блокнот Leuchtturm1917 Medium, A5, 125л, без линовки, Лобстер'
+    'Блокнот "Classic" Large, 120 листов, пунктир, 13 х 21 см, синий'
 )
 
 
