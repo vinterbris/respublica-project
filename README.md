@@ -1,7 +1,12 @@
-# Проект UI автотестов книжного магазина respublica.ru
+<h1 align="center">Проект UI автотестов книжного магазина <a href="respublica.ru" target="_blank">РЕСПУБЛИКА*</a> 
+<img src="/home/vinterbris/PycharmProjects/qa_guru/qa_guru_python_9_15/readme_resources/respublica.png">
+</h1>
+
+<h3 align="center">Python | Pytest | Selene | Jenkins | Allure | Selenoid | Telegram</h3>
+
 
 ## Стэк
-Python, Pytest, Selene, Jenkins, Allure, Selenoid, Telegram
+
 
 ## Проверки:
 - Логин
@@ -75,13 +80,9 @@ Win:
 allure/bin/allure.bat serve
 ```
 
----
-
 </details>
 
 [Другие варианты](https://allurereport.org/docs/gettingstarted-installation/)
-
----
 
 </details>
 
@@ -108,4 +109,6 @@ allure.bat serve
 
 ## Запуск через jenkins+selenoid
 ## Оповещения в мессенджер
-Настроена отправка оповещений в телеграм канал
+> Настроена отправка оповещений в телеграм канал
+
+<img src="https://raw.githubusercontent.com/vinterbris/qa_guru_python_9_15/master/readme_resources/telegram.png" height="500"/>
