@@ -1,19 +1,16 @@
-<h1 align="center">
-Проект UI автотестов книжного магазина
+<h1 align="center">Проект UI автотестов книжного магазина
 <p align="center">
-<a href="respublica.ru"> <img src="readme_resources/respublica_logo.svg" width="" height="110"> 
-</a> 
-</h1>
+<a href="respublica.ru"> <img src="readme_resources/respublica_logo.svg" width="" height="110"> </a> </h1>
 
 
 <h3 align="center">Python | Pytest | Selene | Jenkins | Allure | Selenoid | Telegram</h3>
 <h3 align="center">
-<img height="50" src="readme_resources/icons/python.png"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img height="50" src="readme_resources/icons/Pytest.svg"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img height="50" src="readme_resources/icons/selene.png"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img height="50" src="readme_resources/icons/jenkins.svg"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img height="50" src="readme_resources/icons/allure.png"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img height="50" src="readme_resources/icons/Selenoid.svg"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img height="50" src="readme_resources/icons/python.png"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img height="50" src="readme_resources/icons/Pytest.svg"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img height="50" src="readme_resources/icons/selene.png"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img height="50" src="readme_resources/icons/jenkins.svg"/>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img height="50" src="readme_resources/icons/allure.png"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img height="50" src="readme_resources/icons/Selenoid.svg"/>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img height="50" src="readme_resources/icons/Telegram.svg"/>
 </h3>
 
@@ -122,6 +119,9 @@ allure.bat serve
 
 ## Запуск через jenkins+selenoid
 ## Оповещения в мессенджер
+
+<img src="readme_resources/selenoid_video.mp4" height=""/>
+
 > Настроена отправка оповещений в телеграм канал
 
 <img src="readme_resources/telegram.png" height="350"/>
