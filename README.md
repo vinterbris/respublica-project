@@ -1,7 +1,7 @@
 <h1 align="center">
 Проект UI автотестов книжного магазина
 <p align="center">
-<a href="respublica.ru"> <img src="readme_resources/respublica_logo.svg" width="" height="120"> 
+<a href="respublica.ru"> <img src="readme_resources/respublica_logo.svg" width="" height="110"> 
 </a> 
 </h1>
 
