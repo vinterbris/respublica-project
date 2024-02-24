@@ -119,7 +119,9 @@ allure.bat serve
 
 ## Запуск через jenkins+selenoid
 
-<img src="readme_resources/selenoid_video.mp4" height=""/>
+<video src="readme_resources/selenoid_video.mp4" height=""/>
+
+https://github.com/vinterbris/qa_guru_python_9_15/blob/master/readme_resources/selenoid_video.mp4
 
 ## Оповещения в мессенджер
 
