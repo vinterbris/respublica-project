@@ -16,30 +16,30 @@ Python, Pytest, Selene, Jenkins, Allure, Selenoid, Telegram
 
 1. Клонируйте репозиторий
 
-```bash
-git clone https://github.com/vinterbris/qa_guru_python_9_15.git
-```
+    ```bash
+    git clone https://github.com/vinterbris/qa_guru_python_9_15.git
+    ```
 
 2. Создайте и активируйте виртуальное окружение
 
-```bash
-cd qa_guru_python_9_15
-python -m venv .venv
-```
-Для Linux и Mac:
-```bash
-source .venv/bin/activate
-```
-Для Windows:
-```bash
-.venv/Scripts/activate
-```
+    ```bash
+    cd qa_guru_python_9_15
+    python -m venv .venv
+    ```
+    Для Linux и Mac:
+    ```bash
+    source .venv/bin/activate
+    ```
+    Для Windows:
+    ```bash
+    .venv/Scripts/activate
+    ```
 
 3. Установите зависимости с помощью pip
 
-```bash
-pip install -r requirements.txt
-```
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 <details open>
   <summary><b>4. Установите Allure</b></summary>
@@ -93,16 +93,17 @@ allure/bin/allure.bat serve
 pytest tests
 ```
 
-6. Получите отчёт allure командой (если добавлен в PATH)
+6. Получите отчёт allure командой (если добавлен в PATH)  
 
-Linux\Mac
-```bash
-allure serve
-```
-Windows
-```bash
-allure.bat serve
-```
+    Linux\Mac
+
+    ```bash
+    allure serve
+    ```
+    Windows
+    ```bash
+    allure.bat serve
+    ```
 
 
 
