@@ -5,7 +5,6 @@ from selene import browser
 from selenium import webdriver
 from dotenv import load_dotenv
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 from respublica_tests.application import app
 from utils import attach
@@ -55,9 +54,6 @@ def browser_management(request):
 
     if run_selenoid:
         options = Options()
-        options.add_argument(
-            'user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 '
-            'Safari/537.36')
         options.add_argument("bypass-tunnel-reminder=True")
         options.add_argument("--start-maximized")
         options.add_argument("--disable-infobars")
