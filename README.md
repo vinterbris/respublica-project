@@ -119,9 +119,6 @@ allure.bat serve
 
 ## Запуск через jenkins+selenoid
 
-<video src="readme_resources/selenoid_video.mp4" height=""/>
-
-https://github.com/vinterbris/qa_guru_python_9_15/blob/master/readme_resources/selenoid_video.mp4
 
 ## Оповещения в мессенджер
 
@@ -130,3 +127,7 @@ https://github.com/vinterbris/qa_guru_python_9_15/blob/master/readme_resources/s
 > Настроена отправка оповещений в телеграм канал. Возможна настройка для email, slack, discord, skype, mattermost
 
 <img src="readme_resources/telegram.png" height="350"/>
+
+<video src="readme_resources/selenoid_video.mp4" height=""/>
+
+https://github.com/vinterbris/qa_guru_python_9_15/blob/master/readme_resources/selenoid_video.mp4
