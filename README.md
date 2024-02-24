@@ -18,7 +18,7 @@
 
 ---
 
-### Проверки:
+### Реализованы тесты:
 - [x] Логин
 - [x] Добавление одного товара в корзину
 - [x] Добавление нескольких товаров одного типа в корзину
@@ -27,37 +27,35 @@
 - [x] Очистка корзины
 
 
-## Настройка и запуск локально
+## Запуск тестов
 
-1. Клонируйте репозиторий
+### Локально
+
+1. Клонируем репозиторий
 
 ```bash
 git clone https://github.com/vinterbris/qa_guru_python_9_15.git
 ```
 
-2. Создайте и активируйте виртуальное окружение
+2. Выполняем в консоли pycharm (linux\mac):
 
 ```bash
-cd qa_guru_python_9_15
 python -m venv .venv
-```
-Для Linux и Mac:
-```bash
+pip install -r requirements.txt
 source .venv/bin/activate
+pytest .
 ```
+
 Для Windows:
 ```bash
-.venv/Scripts/activate
-```
-
-3. Установите зависимости с помощью pip
-
-```bash
+python -m venv .venv
 pip install -r requirements.txt
+.venv/Scripts/activate
+pytest .
 ```
 
-<details open>
-  <summary><b>4. Установите Allure</b></summary>
+<details>
+  <summary><b>Устанавливаем Allure</b></summary>
 
 Linux\Mac через Homebrew
 ```bash
@@ -69,8 +67,19 @@ Windows через scoop
 scoop install allure
 ```
 
+3. После запуска тестов получить отчёт allure командой (если добавлен в PATH): 
 
-[Или из напрямую из релизов с github](https://github.com/allure-framework/allure2/releases)
+Linux\Mac
+
+```bash
+allure serve
+```
+Windows
+```bash
+allure.bat serve
+```
+
+[Установить из напрямую из релизов с github](https://github.com/allure-framework/allure2/releases)
 
 <details>
     <summary>Инструкция при установке из архива</summary>
@@ -94,26 +103,12 @@ allure/bin/allure.bat serve
 
 [Другие варианты](https://allurereport.org/docs/gettingstarted-installation/)
 
+
+
 </details>
 
 
-5. Запустите автотесты
 
-```bash
-pytest tests
-```
-
-6. Получите отчёт allure командой (если добавлен в PATH)  
-
-Linux\Mac
-
-```bash
-allure serve
-```
-Windows
-```bash
-allure.bat serve
-```
 
 
 
@@ -123,7 +118,7 @@ allure.bat serve
 https://github.com/vinterbris/qa_guru_python_9_15/assets/21102027/61ba7f0b-e5d1-486c-bdce-e55f67388d89
 
 ## Оповещения в мессенджер
-> Настроена отправка оповещений в телеграм канал. Возможна настройка для email, slack, discord, skype, mattermost
+Настроена отправка оповещений в телеграм канал. Возможна настройка для email, slack, discord, skype, mattermost
 
 <img src="readme_resources/telegram.png" height="350"/>
 
