@@ -4,7 +4,11 @@
 </a></p>
 
 
-<h4 align="center">Python | Pytest | Selene | Jenkins | Allure | Selenoid | Telegram</h3>
+<h3 align="center">Python | Pytest | Selene | Jenkins | Allure | Selenoid | Telegram</h3>
+<h3 align="center"><img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png" height="35"/>
+ | Pytest | Selene | Jenkins | Allure | Selenoid | Telegram
+</h3>
+
 
 
 ## Проверки:
