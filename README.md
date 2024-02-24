@@ -1,11 +1,8 @@
 <h1 align="center">Проект UI автотестов книжного магазина <a href="respublica.ru" target="_blank">РЕСПУБЛИКА*</a> 
-<img src="/home/vinterbris/PycharmProjects/qa_guru/qa_guru_python_9_15/readme_resources/respublica.png">
+<img src="https://raw.githubusercontent.com/vinterbris/qa_guru_python_9_15/master/readme_resources/respublica.pnghttps://raw.githubusercontent.com/vinterbris/qa_guru_python_9_15/master/readme_resources/respublica.png">
 </h1>
 
 <h3 align="center">Python | Pytest | Selene | Jenkins | Allure | Selenoid | Telegram</h3>
-
-
-## Стэк
 
 
 ## Проверки:
@@ -111,4 +108,4 @@ allure.bat serve
 ## Оповещения в мессенджер
 > Настроена отправка оповещений в телеграм канал
 
-<img src="https://raw.githubusercontent.com/vinterbris/qa_guru_python_9_15/master/readme_resources/telegram.png" height="500"/>
+<img src="https://raw.githubusercontent.com/vinterbris/qa_guru_python_9_15/master/readme_resources/telegram.png" height="350"/>
