@@ -1,5 +1,5 @@
 <h1 align="center">Проект UI автотестов книжного магазина</h1>
-<h1 align="center"><img src="https://raw.githubusercontent.com/vinterbris/qa_guru_python_9_15/341aca9a12ab24dc1b0a63395c27f7957672cefb/readme_resources/respublica_logo.svg" height="75">
+<h1 align="center"><img src="https://raw.githubusercontent.com/vinterbris/qa_guru_python_9_15/341aca9a12ab24dc1b0a63395c27f7957672cefb/readme_resources/respublica_logo.svg" alt="respublica.ru" height="75">
 </h1>
 
 <h3 align="center">Python | Pytest | Selene | Jenkins | Allure | Selenoid | Telegram</h3>
