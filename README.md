@@ -5,13 +5,13 @@
 
 <h3 align="center">Python | Pytest | Selene | Jenkins | Allure | Selenoid | Telegram</h3>
 <h3 align="center">
-<img height="50" src="readme_resources/icons/python.png"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img height="50" src="readme_resources/icons/Python.png"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img height="50" src="readme_resources/icons/Pytest.svg"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img height="50" src="readme_resources/icons/Selene.png"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img height="50" src="readme_resources/icons/jenkins.svg"/>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img height="50" src="readme_resources/icons/jenkins.png"/>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img height="50" src="readme_resources/icons/allure.png"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img height="50" src="readme_resources/icons/Selenoid.svg"/>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img height="50" src="readme_resources/icons/Telegram.svg"/>
+<img height="50" src="readme_resources/icons/telegram.png"/>
 </h3>
 
 
