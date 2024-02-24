@@ -1,12 +1,20 @@
 <h1 align="center">Проект UI автотестов книжного магазина
 <p align="center">
-<a href="respublica.ru"> <img src="readme_resources/respublica_logo.svg" width="" height="100"> </a> </h1>
+<a href="respublica.ru"> <img src="readme_resources/respublica_logo.svg" width="" height="85"> </a> </h1>
 
 
 <h3 align="center">Python | Pytest | Selene | Jenkins | Allure | Selenoid | Telegram</h3>
-<h3 align="center"><img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png" height="35"/>
- | Pytest | Selene | Jenkins | Allure | Selenoid | Telegram
+<h3 align="center">
+<img height="35" src="readme_resources/icons/python-svgrepo-com.svg"/>
+<img height="35" src="readme_resources/icons/pytest.svg"/>
+<img height="35" src="readme_resources/icons/selenium-svgrepo-com.svg"/>
+<img height="35" src="readme_resources/icons/jenkins-svgrepo-com.svg"/>
+<img height="35" src="readme_resources/icons/allure.png"/>
+<img height="35" src="readme_resources/icons/Selenoid.svg"/>
+<img height="35" src="readme_resources/icons/telegram-logo-svgrepo-com.svg"/>
 </h3>
+
+
 
 ---
 
@@ -113,4 +121,4 @@ allure.bat serve
 ## Оповещения в мессенджер
 > Настроена отправка оповещений в телеграм канал
 
-<img src="readme_resources/telegram1.png" height="350"/>
+<img src="readme_resources/telegram.png" height="350"/>
