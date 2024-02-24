@@ -8,9 +8,9 @@
 
 <h3 align="center">Python | Pytest | Selene | Jenkins | Allure | Selenoid | Telegram</h3>
 <h3 align="center">
-<img height="50" src="readme_resources/icons/python.png" title="Python"/>
+<img height="50" src="readme_resources/icons/python.png"/>
 <img height="50" src="readme_resources/icons/Pytest.svg"/>
-<img height="50" src="readme_resources/icons/selenium.svg"/>
+<img height="50" src="readme_resources/icons/selene.png"/>
 <img height="50" src="readme_resources/icons/jenkins.svg"/>
 <img height="50" src="readme_resources/icons/allure.png"/>
 <img height="50" src="readme_resources/icons/Selenoid.svg"/>
