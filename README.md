@@ -37,7 +37,7 @@
 git clone https://github.com/vinterbris/qa_guru_python_9_15.git
 ```
 
-2. Выполняем в консоли pycharm (linux\mac):
+2. Выполняем в терминале pycharm (linux\mac):
 
 ```bash
 python -m venv .venv
