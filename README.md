@@ -7,7 +7,7 @@
 <h3 align="center">
 <img height="50" src="readme_resources/icons/Python.png"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img height="50" src="readme_resources/icons/Pytest.svg"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img height="50" src="readme_resources/icons/selene.png"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img height="50" src="readme_resources/icons/Selene.png"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img height="50" src="readme_resources/icons/jenkins.png"/>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img height="50" src="readme_resources/icons/allure.png"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img height="50" src="readme_resources/icons/Selenoid.svg"/>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -119,15 +119,14 @@ allure.bat serve
 
 ## Запуск через jenkins+selenoid
 
+## Пример запуска тестов
+https://github.com/vinterbris/qa_guru_python_9_15/assets/21102027/61ba7f0b-e5d1-486c-bdce-e55f67388d89
 
 ## Оповещения в мессенджер
-
-
-
 > Настроена отправка оповещений в телеграм канал. Возможна настройка для email, slack, discord, skype, mattermost
 
 <img src="readme_resources/telegram.png" height="350"/>
 
 
-https://github.com/vinterbris/qa_guru_python_9_15/assets/21102027/61ba7f0b-e5d1-486c-bdce-e55f67388d89
+
 
