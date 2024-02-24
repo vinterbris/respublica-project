@@ -1,7 +1,6 @@
-<h1 align="center">Проект UI автотестов книжного магазина</h1>
-<p><a href="respublica.ru">
-<h1 align="center"><img src="https://raw.githubusercontent.com/vinterbris/qa_guru_python_9_15/341aca9a12ab24dc1b0a63395c27f7957672cefb/readme_resources/respublica_logo.svg" height="75"></h1>
-</a></p>
+<h1 align="center">Проект UI автотестов книжного магазина
+<p align="center">
+<a href="respublica.ru"> <img src="readme_resources/respublica_logo.svg" width="" height="75"> </a> </h1>
 
 
 <h3 align="center">Python | Pytest | Selene | Jenkins | Allure | Selenoid | Telegram</h3>
@@ -12,12 +11,12 @@
 
 
 ## Проверки:
-- Логин
-- Добавление одного товара в корзину
-- Добавление нескольких товаров одного типа в корзину
-- Добавление нескольких разных товаров в корзину
-- Удаление одного товара из корзины
-- Очистка корзины
+- [x] Логин
+- [x] Добавление одного товара в корзину
+- [x] Добавление нескольких товаров одного типа в корзину
+- [x] Добавление нескольких разных товаров в корзину
+- [x] Удаление одного товара из корзины
+- [x] Очистка корзины
 
 
 ## Настройка и запуск локально
@@ -114,4 +113,4 @@ allure.bat serve
 ## Оповещения в мессенджер
 > Настроена отправка оповещений в телеграм канал
 
-<img src="https://raw.githubusercontent.com/vinterbris/qa_guru_python_9_15/master/readme_resources/telegram1.png" height="350"/>
+<img src="readme_resources/telegram1.png" height="350"/>
