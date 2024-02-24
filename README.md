@@ -128,6 +128,6 @@ allure.bat serve
 
 <img src="readme_resources/telegram.png" height="350"/>
 
-<video src="readme_resources/selenoid_video.mp4" height=""/>
 
-https://github.com/vinterbris/qa_guru_python_9_15/blob/master/readme_resources/selenoid_video.mp4
+https://github.com/vinterbris/qa_guru_python_9_15/assets/21102027/61ba7f0b-e5d1-486c-bdce-e55f67388d89
+
