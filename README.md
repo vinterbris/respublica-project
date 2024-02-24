@@ -45,14 +45,16 @@ pip install -r requirements.txt
 source .venv/bin/activate
 pytest .
 ```
+<details open>
+  <summary><b>Для Windows:</b></summary>
 
-Для Windows:
 ```bash
 python -m venv .venv
 pip install -r requirements.txt
 .venv/Scripts/activate
 pytest .
 ```
+</details>
 
 <details>
   <summary><b>Устанавливаем Allure</b></summary>
