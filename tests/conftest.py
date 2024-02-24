@@ -21,6 +21,7 @@ def pytest_addoption(parser):
     parser.addoption('--browser_version', default='120.0')
     parser.addoption('--selenoid', default=False)
     parser.addoption('--selenoid_url', default='http://localhost:4444')
+    parser.addoption('--selenoid_ui_url', default='http://localhost:8080')
 
 
 '''
@@ -46,6 +47,7 @@ def browser_management(request):
     browser_version = request.config.getoption('--browser_version')
     run_selenoid = request.config.getoption('--selenoid')
     selenoid_url = request.config.getoption('--selenoid_url')
+    selenoid_ui_url = request.config.getoption('--selenoid_ui_url')
 
     browser.config.timeout = 10.0
     browser.config.window_width = 1920
@@ -91,7 +93,7 @@ def browser_management(request):
     attach.add_screenshot(browser)
     attach.add_logs(browser)
     attach.add_html(browser)
-    attach.add_video(browser)
+    attach.add_video(browser, selenoid_ui_url)
 
     browser.quit()
 
