@@ -4,7 +4,7 @@
 </a></p>
 
 
-<h3 align="center">Python | Pytest | Selene | Jenkins | Allure | Selenoid | Telegram</h3>
+<h4 align="center">Python | Pytest | Selene | Jenkins | Allure | Selenoid | Telegram</h3>
 
 
 ## Проверки:
