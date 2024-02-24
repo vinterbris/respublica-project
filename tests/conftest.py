@@ -11,9 +11,6 @@ from respublica_tests.application import app
 from utils import attach
 
 WEB_URL = "https://www.respublica.ru"
-headers = {
-    'bypass-tunnel-reminder': 'True'
-}
 
 
 @pytest.fixture(scope='session', autouse=True)
@@ -25,6 +22,24 @@ def pytest_addoption(parser):
     parser.addoption('--browser_version', default='120.0')
     parser.addoption('--selenoid', default=False)
     parser.addoption('--selenoid_url', default='http://localhost:4444/')
+
+
+'''
+using https://localtunnel.github.io to forward selenoid on localhost to the internet
+
+Install Localtunnel globally (requires NodeJS) to make it accessible anywhere:
+
+npm install -g localtunnel
+
+Start a webserver on some local port (eg http://localhost:4444) 
+and use the command line interface to request a tunnel to your local server:
+
+lt --port 8000
+
+You will receive a url, for example https://gqgh.localtunnel.me, 
+that you can share with anyone for as long as your local instance of lt remains active. 
+Any requests will be routed to your local service at the specified port.
+'''
 
 
 @pytest.fixture(scope='session', autouse=True)
