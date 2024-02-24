@@ -14,13 +14,13 @@ Python, Pytest, Selene, Jenkins, Allure, Selenoid, Telegram
 
 ## Настройка и запуск локально
 
-Клонируйте репозиторий
+1. Клонируйте репозиторий
 
 ```bash
 git clone https://github.com/vinterbris/qa_guru_python_9_15.git
 ```
 
-Создайте и активируйте виртуальное окружение
+2. Создайте и активируйте виртуальное окружение
 
 ```bash
 cd qa_guru_python_9_15
@@ -35,14 +35,14 @@ source .venv/bin/activate
 .venv/Scripts/activate
 ```
 
-Установите зависимости с помощью pip
+3. Установите зависимости с помощью pip
 
 ```bash
 pip install -r requirements.txt
 ```
 
 <details open>
-  <summary><b>Установите Allure</b></summary>
+  <summary><b>4. Установите Allure</b></summary>
 
 Linux\Mac через Homebrew
 ```bash
@@ -62,7 +62,7 @@ scoop install allure
 1. Скачать последнюю версию под свою систему 
 2. Разархивировать в корень проекта
 3. Папку (например `allure-2.27.0`) переименовываем в `allure`
-4. Аллюр по из архива готов, теперь запускать отчет можно из корня проекта командой:
+4. Аллюр из архива готов, теперь запускать отчет можно из корня проекта командой:
 
 Linux\Mac: 
 ```bash
@@ -87,13 +87,13 @@ allure/bin/allure.bat serve
 </details>
 
 
-Запустите автотесты
+5. Запустите автотесты
 
 ```bash
 pytest tests
 ```
 
-Получите отчёт allure командой (если добавлен в PATH)
+6. Получите отчёт allure командой (если добавлен в PATH)
 
 Linux\Mac
 ```bash
