@@ -118,10 +118,13 @@ allure.bat serve
 
 
 ## Запуск через jenkins+selenoid
-## Оповещения в мессенджер
 
 <img src="readme_resources/selenoid_video.mp4" height=""/>
 
-> Настроена отправка оповещений в телеграм канал
+## Оповещения в мессенджер
+
+
+
+> Настроена отправка оповещений в телеграм канал. Возможна настройка для email, slack, discord, skype, mattermost
 
 <img src="readme_resources/telegram.png" height="350"/>
