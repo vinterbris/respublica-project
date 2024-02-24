@@ -1,5 +1,5 @@
 <h1 align="center">Проект UI автотестов книжного магазина <a href="respublica.ru" target="_blank">РЕСПУБЛИКА*</a> 
-<img src="https://raw.githubusercontent.com/vinterbris/qa_guru_python_9_15/master/readme_resources/respublica.png">
+<img src="https://raw.githubusercontent.com/vinterbris/qa_guru_python_9_15/master/readme_resources/respublica.png" height="100">
 </h1>
 
 <h3 align="center">Python | Pytest | Selene | Jenkins | Allure | Selenoid | Telegram</h3>
