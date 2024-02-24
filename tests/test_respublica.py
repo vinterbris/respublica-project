@@ -1,4 +1,4 @@
-from selene import have, be, browser
+from selene import have, be
 
 from respublica_tests.application import app
 from respublica_tests.e2e import add_item_to_cart

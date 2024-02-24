@@ -1,9 +1,7 @@
-import os
-
 import pytest
+from dotenv import load_dotenv
 from selene import browser
 from selenium import webdriver
-from dotenv import load_dotenv
 from selenium.webdriver.chrome.options import Options
 
 from respublica_tests.application import app
@@ -25,7 +23,7 @@ def pytest_addoption(parser):
 
 
 '''
-using https://localtunnel.github.io to forward selenoid on localhost to the internet
+using https://localtunnel.github.io to forward selenoid from localhost to the internet
 
 Install Localtunnel globally (requires NodeJS) to make it accessible anywhere:
 
