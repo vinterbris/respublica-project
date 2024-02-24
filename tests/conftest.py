@@ -20,7 +20,7 @@ def load_env():
 def pytest_addoption(parser):
     parser.addoption('--browser_version', default='120.0')
     parser.addoption('--selenoid', default=False)
-    parser.addoption('--selenoid_url', default='http://localhost:4444/')
+    parser.addoption('--selenoid_url', default='http://localhost:4444')
 
 
 '''
@@ -73,7 +73,7 @@ def browser_management(request):
         options.capabilities.update(selenoid_capabilities)
 
         driver = webdriver.Remote(
-            command_executor=selenoid_url + "wd/hub/",
+            command_executor=selenoid_url + "/wd/hub/",
             options=options
         )
 
