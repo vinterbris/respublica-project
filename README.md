@@ -45,17 +45,18 @@ Python, Pytest, Selene, Jenkins, Allure, Selenoid, Telegram
   <summary><b>4. Установите Allure</b></summary>
 
 Linux\Mac через Homebrew
-```bash
-brew install allure
-```
+    ```bash
+    brew install allure
+    ```
 
 Windows через scoop
-```bash
-scoop install allure
-```
+    ```bash
+    scoop install allure
+    ```
 
 
 [Или из напрямую из релизов с github](https://github.com/allure-framework/allure2/releases)
+
 <details>
     <summary>Инструкция при установке из архива</summary>
 
@@ -65,13 +66,14 @@ scoop install allure
 4. Аллюр из архива готов, теперь запускать отчет можно из корня проекта командой:
 
 Linux\Mac: 
-```bash
-allure/bin/allure serve
-```
+    ```bash
+    allure/bin/allure serve
+    ```
+
 Win: 
-```bash
-allure/bin/allure.bat serve
-```
+    ```bash
+    allure/bin/allure.bat serve
+    ```
 
 ---
 
@@ -89,9 +91,9 @@ allure/bin/allure.bat serve
 
 5. Запустите автотесты
 
-```bash
-pytest tests
-```
+    ```bash
+    pytest tests
+    ```
 
 6. Получите отчёт allure командой (если добавлен в PATH)  
 
