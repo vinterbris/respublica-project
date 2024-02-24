@@ -1,7 +1,11 @@
-<h1 align="center">Проект UI автотестов книжного магазина
-<p align="center">
-<a href="respublica.ru"> <img src="readme_resources/respublica_logo.svg" width="" height="85"> </a> </h1>
+<h1 align="center">
 
+<p align="center">
+<a href="respublica.ru"> <img src="readme_resources/respublica_logo.svg" width="" height="85">
+
+</a> 
+</h1>
+<h1 align="center">Проект UI автотестов книжного магазина</h1>
 
 <h3 align="center">Python | Pytest | Selene | Jenkins | Allure | Selenoid | Telegram</h3>
 <h3 align="center">
