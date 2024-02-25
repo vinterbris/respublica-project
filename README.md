@@ -125,6 +125,8 @@ allure/bin/allure.bat serve
 <details>
   <summary>Относительно быстро разворачиваем selenoid в vm или локально</summary>
 
+Официальная [инструкция](https://aerokube.com/cm/latest/#_quick_start_guide)
+
 1. Ставим [virtualbox](https://www.virtualbox.org/wiki/Downloads)
 2. Качаем образ [ubuntu](https://sourceforge.net/projects/linuxvmimages/files/VirtualBox/U/22.04/Ubuntu_22.04_VB.7z/download)
 ```bash
@@ -203,10 +205,10 @@ newgrp docker
 ```bash
 pytest . --selenoid=True --browser_version=120.0 --selenoid_url=http://localhost:4444/wd/hub --selenoid_ui_url=http://localhost:8080/#/
 ```
---selenoid=True   - запуск через selenoid (дефолт False)
---browser_versio  - версия браузера (дефолт 120.0 для Chrome)
---selenoid_url    - адрес selenoid (дефолт - localhost)
---selenoid_ui_url - адрес selenoid-ui (дефолт - localhost)
+`--selenoid=True`   - запуск через selenoid (дефолт False)  
+`--browser_versio`  - версия браузера (дефолт 120.0 для Chrome)  
+`--selenoid_url`    - адрес selenoid (дефолт - localhost)  
+`--selenoid_ui_url` - адрес selenoid-ui (дефолт - localhost)
 
 ## Пример запуска тестов
 
