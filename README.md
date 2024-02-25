@@ -207,14 +207,14 @@ newgrp docker
    allure testops отчет
 6. В отчете доступны логи, скриншоты и видео (если используется корректная ссылка для selenoid-ui)
 
-<img src="readme_resources/jenkins.png" height="500"/>
+<img src="readme_resources/jenkins.png" height="" width="1000"/>
 
 <details open>
   <summary>Allure report и Allure TestOps</summary>
 
-<img src="readme_resources/allure.png" height="500"/>
-<img src="readme_resources/allure_b.png" height="500"/>
-<img src="readme_resources/allure_t.png" height="500"/>
+<img src="readme_resources/allure.png" height="300" width="1000"/>
+<img src="readme_resources/allure_b.png" height="300" width="1000"/>
+<img src="readme_resources/allure_t.png" height="300" width="1000"/>
 
 </details>
 
