@@ -1,3 +1,4 @@
+import allure
 import pytest
 from dotenv import load_dotenv
 from selene import browser
@@ -9,6 +10,7 @@ from respublica_tests.application import app
 from utils import attach
 
 config = Config()
+
 
 @pytest.fixture(scope='session', autouse=True)
 def load_env():
@@ -82,6 +84,7 @@ def browser_management(request):
 def clear_cart_when_finished():
     yield
 
-    if app.cart_page.cart_has_items():
-        app.cart_page.clear_cart()
-        app.cart_page.check_is_cart_empty()
+    with allure.step('Очистить корзину и подвердить очищение'):
+        if app.cart_page.cart_has_items():
+            app.cart_page.clear_cart()
+            app.cart_page.check_is_cart_empty()

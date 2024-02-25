@@ -128,13 +128,17 @@ allure/bin/allure.bat serve
 Официальная [инструкция](https://aerokube.com/cm/latest/#_quick_start_guide)
 
 1. Ставим [virtualbox](https://www.virtualbox.org/wiki/Downloads)
-2. Качаем образ [ubuntu](https://sourceforge.net/projects/linuxvmimages/files/VirtualBox/U/22.04/Ubuntu_22.04_VB.7z/download)
+2. Качаем
+   образ [ubuntu](https://sourceforge.net/projects/linuxvmimages/files/VirtualBox/U/22.04/Ubuntu_22.04_VB.7z/download)
+
 ```bash
 wget https://sourceforge.net/projects/linuxvmimages/files/VirtualBox/U/22.04/Ubuntu_22.04_VB.7z/download`
 ```
+
 5. Разархивируем и добавляем в virtualbox
 4. Запускаем vm (логин\пароль: ubuntu\ubuntu)
 5. Устанавливаем докер:
+
 ```bash
 # Add Docker's official GPG key:
 sudo apt-get update
@@ -153,6 +157,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo docker run hello-world
 ```
+
 6. Устанавливаем selenoid:
 
 ```bash
@@ -162,32 +167,34 @@ chmod +x cm
 sudo usermod -aG docker $USER
 newgrp docker
 ```
+
 ```bash
 ./cm selenoid start --vnc
 ./cm selenoid-ui start
 ```
+
 7. Селеноид развернут. Интерфейс доступен по ссылке http://localhost:8080/#/
 8. Адрес для использования в тестах: http://localhost:4444/wd/hub
 9. Пробрасываем локальные адреса в интернет при помощи опенсорс утилиты [localtunnel](https://localtunnel.github.io)
-   1. Ставим npm
+    1. Ставим npm
    ```bash
    sudo apt install nodejs npm
    ```
-   2. Ставим localtunnel
+    2. Ставим localtunnel
    ```bash
    npm install -g localtunnel
    ```
-   3. Запускаем туннель до нашего селеноид на localhost (SELENOID_URL)
+    3. Запускаем туннель до нашего селеноид на localhost (SELENOID_URL)
    ```bash
    lt --port 4444
    ```
-   4. Во 2-м терминале запускаем туннель до selenoid-ui (SELENOID_UI_URL)
+    4. Во 2-м терминале запускаем туннель до selenoid-ui (SELENOID_UI_URL)
    ```bash
    lt --port 8080
    ```
-   5. Открываем ссылку для selenoid-ui - чтобы ее открыть требуется пароль (тесты обходят через хедер)
-   6. Пароль - наш ip по [ссылке](https://loca.lt/mytunnelpassword) 
-   7. Теперь доступен просмотр видео в allure отчёте
+    5. Открываем ссылку для selenoid-ui - чтобы ее открыть требуется пароль (тесты обходят через хедер)
+    6. Пароль - наш ip по [ссылке](https://loca.lt/mytunnelpassword)
+    7. Теперь доступен просмотр видео в allure отчёте
 10. Берем ссылки от localtunnel и указываем их дальше в jenkins
 
 </details>
@@ -196,15 +203,18 @@ newgrp docker
 2. Нажимаем Build with parameters
 3. Указываем SELENOID_URL и SELEOID_UI_URL (если нужен доступ к видео)
 4. Нажимаем кнопку Build
-5. По окончанию прогона нам доступны [allure отчет ](https://jenkins.autotests.cloud/job/C09-vbr_s-lesson15/17/allure/)и allure testops отчет
+5. По окончанию прогона нам доступны [allure отчет ](https://jenkins.autotests.cloud/job/C09-vbr_s-lesson15/17/allure/)и
+   allure testops отчет
 6. В отчете доступны логи, скриншоты и видео (если используется корректная ссылка для selenoid-ui)
 
 #### Локальный запуск через selenoid
+
 > _Для запуска из vm потребуются ссылки от localtunnel_
 
 ```bash
 pytest . --selenoid=True --browser_version=120.0 --selenoid_url=http://localhost:4444/wd/hub --selenoid_ui_url=http://localhost:8080/#/
 ```
+
 `--selenoid=True`   - запуск через selenoid (дефолт False)  
 `--browser_versio`  - версия браузера (дефолт 120.0 для Chrome)  
 `--selenoid_url`    - адрес selenoid (дефолт - localhost)  
