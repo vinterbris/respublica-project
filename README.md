@@ -212,9 +212,9 @@ newgrp docker
 <details open>
   <summary>Allure report и Allure TestOps</summary>
 
-<img src="readme_resources/allure.png" height="300" width="1000"/>
-<img src="readme_resources/allure_b.png" height="300" width="1000"/>
-<img src="readme_resources/allure_t.png" height="300" width="1000"/>
+<img src="readme_resources/allure.png" height="" width="1000"/>
+<img src="readme_resources/allure_b.png" height="" width="1000"/>
+<img src="readme_resources/allure_t.png" height="" width="1000"/>
 
 </details>
 
