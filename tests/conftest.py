@@ -4,11 +4,11 @@ from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
+from config import Config
 from respublica_tests.application import app
 from utils import attach
 
-WEB_URL = "https://www.respublica.ru"
-
+config = Config()
 
 @pytest.fixture(scope='session', autouse=True)
 def load_env():
@@ -22,24 +22,6 @@ def pytest_addoption(parser):
     parser.addoption('--selenoid_ui_url', default='http://localhost:8080')
 
 
-'''
-using https://localtunnel.github.io to forward selenoid from localhost to the internet
-
-Install Localtunnel globally (requires NodeJS) to make it accessible anywhere:
-
-npm install -g localtunnel
-
-Start a webserver on some local port (eg http://localhost:4444) 
-and use the command line interface to request a tunnel to your local server:
-
-lt --port 4444
-
-You will receive a url, for example https://gqgh.localtunnel.me, 
-that you can share with anyone for as long as your local instance of lt remains active. 
-Any requests will be routed to your local service at the specified port.
-'''
-
-
 @pytest.fixture(scope='session', autouse=True)
 def browser_management(request):
     browser_version = request.config.getoption('--browser_version')
@@ -47,10 +29,10 @@ def browser_management(request):
     selenoid_url = request.config.getoption('--selenoid_url')
     selenoid_ui_url = request.config.getoption('--selenoid_ui_url')
 
-    browser.config.timeout = 10.0
-    browser.config.window_width = 1920
-    browser.config.window_height = 1080
-    browser.config.base_url = WEB_URL
+    browser.config.timeout = config.timeout
+    browser.config.window_width = config.window_width
+    browser.config.window_height = config.window_height
+    browser.config.base_url = config.base_url
 
     if run_selenoid:
         options = Options()
