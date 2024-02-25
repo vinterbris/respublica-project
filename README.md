@@ -49,7 +49,7 @@ pytest .
 ```
 
 <details open>
-  <summary><b>Для Windows:</b></summary>
+  <summary>Для Windows:</summary>
 
 ```bash
 python -m venv .venv
@@ -123,7 +123,7 @@ allure/bin/allure.bat serve
 > развернутый selenoid
 
 <details>
-  <summary>Относительно быстро разворачиваем selenoid</summary>
+  <summary>Относительно быстро разворачиваем selenoid в vm или локально</summary>
 
 1. Ставим [virtualbox](https://www.virtualbox.org/wiki/Downloads)
 2. Качаем образ [ubuntu](https://sourceforge.net/projects/linuxvmimages/files/VirtualBox/U/22.04/Ubuntu_22.04_VB.7z/download)
@@ -166,7 +166,7 @@ newgrp docker
 ```
 7. Селеноид развернут. Интерфейс доступен по ссылке http://localhost:8080/#/
 8. Адрес для использования в тестах: http://localhost:4444/wd/hub
-9. Пробрасываем локальные адресы в интернет при помощи бесплатной утилиты [localtunnel](https://localtunnel.github.io)
+9. Пробрасываем локальные адреса в интернет при помощи опенсорс утилиты [localtunnel](https://localtunnel.github.io)
    1. Ставим npm
    ```bash
    sudo apt install nodejs npm
@@ -194,8 +194,8 @@ newgrp docker
 2. Нажимаем Build with parameters
 3. Указываем SELENOID_URL и SELEOID_UI_URL (если нужен доступ к видео)
 4. Нажимаем кнопку Build
-5. По окончанию прогона нам доступны [allure отчет ](https://jenkins.autotests.cloud/job/C09-vbr_s-lesson15/17/allure/)и allure testops отчет ()
-
+5. По окончанию прогона нам доступны [allure отчет ](https://jenkins.autotests.cloud/job/C09-vbr_s-lesson15/17/allure/)и allure testops отчет
+6. В отчете доступны логи, скриншоты и видео (если используется)
 
 #### Локальный запуск через selenoid
 > _Для запуска из vm потребуются ссылки от localtunnel_
@@ -205,8 +205,8 @@ pytest . --selenoid=True --browser_version=120.0 --selenoid_url=http://localhost
 ```
 --selenoid=True   - запуск через selenoid (дефолт False)
 --browser_versio  - версия браузера (дефолт 120.0 для Chrome)
---selenoid_url    - адрес selenoid
---selenoid_ui_url - адрес selenoid-ui
+--selenoid_url    - адрес selenoid (дефолт - localhost)
+--selenoid_ui_url - адрес selenoid-ui (дефолт - localhost)
 
 ## Пример запуска тестов
 
