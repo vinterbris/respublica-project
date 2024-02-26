@@ -36,9 +36,10 @@ def browser_management(request):
     browser.config.window_height = config.window_height
     browser.config.base_url = config.base_url
 
+    options = Options()
+    options.page_load_strategy = 'eager'
+
     if run_selenoid:
-        options = Options()
-        options.add_argument("bypass-tunnel-reminder=True")
         options.add_argument("--start-maximized")
         options.add_argument("--disable-infobars")
         options.add_argument("--disable-extensions")
@@ -55,7 +56,6 @@ def browser_management(request):
             }
         }
         options.capabilities.update(selenoid_capabilities)
-        options.page_load_strategy = 'eager'
 
         driver = webdriver.Remote(
             command_executor=selenoid_url + "/wd/hub/",
@@ -71,8 +71,6 @@ def browser_management(request):
 
         browser.config.driver = driver
     else:
-        options = Options()
-        options.page_load_strategy = 'eager'
         browser.config.driver_options = options
 
     yield
