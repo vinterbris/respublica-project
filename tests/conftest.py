@@ -24,7 +24,7 @@ def pytest_addoption(parser):
     parser.addoption('--selenoid_ui_url', default='http://localhost:8080')
 
 
-@pytest.fixture(scope='session', autouse=True)
+@pytest.fixture(scope='function', autouse=True)
 def browser_management(request):
     browser_version = request.config.getoption('--browser_version')
     run_selenoid = request.config.getoption('--selenoid')
@@ -55,6 +55,7 @@ def browser_management(request):
             }
         }
         options.capabilities.update(selenoid_capabilities)
+        options.page_load_strategy = 'eager'
 
         driver = webdriver.Remote(
             command_executor=selenoid_url + "/wd/hub/",
@@ -69,6 +70,10 @@ def browser_management(request):
         # )
 
         browser.config.driver = driver
+    else:
+        options = Options()
+        options.page_load_strategy = 'eager'
+        browser.config.driver_options = options
 
     yield
 

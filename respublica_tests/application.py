@@ -19,16 +19,12 @@ class Application:
         browser.open('/')
 
     def add_to_cart(self, product_name):
-        app.header.login_if_not_logged_in()
         app.header.search(product_name)
-        app.select(product_name)
+        app.search_page.select(product_name)
         app.product_page.add_to_cart()
         app.product_page.go_to_cart()
 
-    def select(self, product_name):
-        browser.element(f"[title='{product_name}']").click()
-        loading_page = LoadingPage()
-        loading_page.wait_until_finished()
+
 
     def clear_cart(self):
         self.header.go_to_cart()
@@ -44,7 +40,7 @@ class Application:
     def add_to_cart_all(self, PRODUCTS):
         for product in PRODUCTS:
             app.header.search(product)
-            app.select(product)
+            app.search_page.select(product)
             app.product_page.add_to_cart()
             app.product_page.checkout.wait_until(be.visible)
 

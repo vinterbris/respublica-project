@@ -27,10 +27,9 @@ def test_login():
 def test_add_single_item_to_cart(clear_cart_when_finished):
     items = 1
     amount_per_item = 1
+    app.open()
 
     # WHEN
-    with allure.step('Логин'):
-        app.header.login_if_not_logged_in()
     with allure.step('Найти товар'):
         app.header.search(PRODUCT_NAME)
     with allure.step('Выбрать найденный товар'):
@@ -56,10 +55,9 @@ def test_add_single_item_to_cart(clear_cart_when_finished):
 def test_add_multiple_items_to_cart(clear_cart_when_finished):
     items = 1
     amount_per_item = 4
+    app.open()
 
     # WHEN
-    with allure.step('Логин'):
-        app.header.login_if_not_logged_in()
     with allure.step('Найти и добавить товар в корзину'):
         app.header.search(PRODUCT_NAME)
         app.search_page.select(PRODUCT_NAME)
@@ -84,11 +82,10 @@ def test_add_multiple_items_to_cart(clear_cart_when_finished):
 def test_add_multiple_different_items_to_cart(clear_cart_when_finished):
     total_amount_of_items = len(PRODUCTS)
     checkbox_statuses = app.make_list_of_all_checkbox_statuses(total_amount_of_items)
-    amounts_of_items = app.make_list_of_all_individual_item_amounts
+    amounts_of_items = app.make_list_of_all_individual_item_amounts(total_amount_of_items)
+    app.open()
 
     # WHEN
-    with allure.step('Логин'):
-        app.header.login_if_not_logged_in()
     with allure.step('Найти и добавить товары в корзину'):
         app.add_to_cart_all(PRODUCTS)
     with allure.step('Перейти в корзину'):
@@ -108,6 +105,8 @@ def test_add_multiple_different_items_to_cart(clear_cart_when_finished):
 @allure.feature("Корзина")
 @allure.story("Удаление товара из корзины")
 def test_delete_item_from_cart():
+    app.open()
+
     # WHEN
     with allure.step('Добавить товар в корзину и перейти в нее'):
         app.add_to_cart(PRODUCT_NAME)
@@ -126,6 +125,8 @@ def test_delete_item_from_cart():
 @allure.feature("Корзина")
 @allure.story("Очистка корзины")
 def test_clear_cart():
+    app.open()
+
     # WHEN
     with allure.step('Добавить товар в корзину и перейти в нее'):
         app.add_to_cart(PRODUCT_NAME)

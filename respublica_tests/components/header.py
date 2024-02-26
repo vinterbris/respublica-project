@@ -20,7 +20,7 @@ class Header:
 
     def login_initial(self):
         browser.open('/')
-        self._button_authorisation.with_(timeout=20.0).click()
+        self._button_authorisation.with_(timeout=60.0).click()
         self._field_login_name.type(os.getenv('LOGIN'))
         self._field_login_password.type(os.getenv('PASSWORD'))
         self._button_signin.click()
