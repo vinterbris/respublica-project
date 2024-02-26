@@ -233,6 +233,7 @@ pytest . --selenoid=True --browser_version=120.0 --selenoid_url=http://localhost
 
 ## Пример запуска тестов
 https://github.com/vinterbris/qa_guru_python_9_15/assets/21102027/bb5e26de-4ce1-4e00-b360-76e9d196f444
+
 https://github.com/vinterbris/qa_guru_python_9_15/assets/21102027/fc5dbb2a-3acd-4968-b9da-d3a38175f64f
 
 
