@@ -1,17 +1,17 @@
 <h1 align="center">Проект UI автотестов книжного магазина
 <p align="center">
-<a href="respublica.ru"> <img src="readme_resources/respublica_logo.svg" width="" height="110"> </a> </h1>
+<a href="respublica.ru"> <img src="resources/images/respublica_logo.svg" width="" height="110"> </a> </h1>
 
 
 <h3 align="center">Python | Pytest | Selene | Jenkins | Allure | Selenoid | Telegram</h3>
 <h3 align="center">
-<img height="50" src="readme_resources/icons/Python.png"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img height="50" src="readme_resources/icons/Pytest.svg"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img height="50" src="readme_resources/icons/Selene.png"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img height="50" src="readme_resources/icons/jenkins.png"/>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img height="50" src="readme_resources/icons/allure.png"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img height="50" src="readme_resources/icons/Selenoid.svg"/>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img height="50" src="readme_resources/icons/telegram.png"/>
+<img height="50" src="resources/images/Python.png"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img height="50" src="resources/images/Pytest.svg"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img height="50" src="resources/images/Selene.png"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img height="50" src="resources/images/jenkins.png"/>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img height="50" src="resources/images/allure.png"/>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img height="50" src="resources/images/Selenoid.svg"/>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img height="50" src="resources/images/telegram.png"/>
 </h3>
 
 
@@ -207,17 +207,16 @@ newgrp docker
    allure testops отчет
 6. В отчете доступны логи, скриншоты и видео (если используется корректная ссылка для selenoid-ui)
 
-<img src="readme_resources/jenkins.png" height="" width="1000"/>
+<img src="resources/images/screenshot_jenkins.png" height="" width="1000"/>
 
 <details open>
   <summary>Allure report и Allure TestOps</summary>
 
-<img src="readme_resources/allure.png" height="" width="1000"/>
-<img src="readme_resources/allure_b.png" height="" width="1000"/>
-<img src="readme_resources/allure_t.png" height="" width="1000"/>
+<img src="resources/images/screenshot_allure.png" height="" width="1000"/>
+<img src="resources/images/screenshot_allure_b.png" height="" width="1000"/>
+<img src="resources/images/screenshot_allure_t.png" height="" width="1000"/>
 
 </details>
-
 
 #### Локальный запуск через selenoid
 
@@ -242,7 +241,7 @@ https://github.com/vinterbris/qa_guru_python_9_15/assets/21102027/61ba7f0b-e5d1-
 
 > _Настроена отправка оповещений в телеграм канал. Возможна настройка для email, slack, discord, skype, mattermost_
 
-<img src="readme_resources/telegram.png" height="350"/>
+<img src="resources/images/screenshot_telegram.png" height="350"/>
 
 
 

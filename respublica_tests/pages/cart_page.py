@@ -1,12 +1,10 @@
 from selene import browser, have, be
 
-from respublica_tests.components.header import Header
-
 
 class CartPage:
     def __init__(self):
-        self._confirm_clear_cart = browser.element('.deleted-button')
-        self._button_clear_cart = browser.element('.delete-selected')
+        self.confirm_clear_cart = browser.element('.deleted-button')
+        self.button_clear_cart = browser.element('.delete-selected')
         self.empty = browser.element('.cart-none-title')
         self.total_items = browser.element('.cart-order-item-title')
         self.all_item_counts = browser.all('.count-input')
@@ -16,13 +14,6 @@ class CartPage:
         self.item_name = browser.element('.item-name')
         self.checkbox = browser.element('[type=checkbox]')
         self.all_items_counter = browser.element('.cart-count')
-
-    def clear_cart(self):
-        header = Header()
-
-        header.go_to_cart()
-        self._button_clear_cart.click()
-        self._confirm_clear_cart.click()
 
     def remove_first_item(self):
         self.checkbox.with_(click_by_js=True).click()

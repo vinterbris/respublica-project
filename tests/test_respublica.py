@@ -1,16 +1,9 @@
 import allure
 from allure_commons.types import Severity
-from selene import have, be
+from selene import have
 
 from respublica_tests.application import app
-from respublica_tests.e2e import add_item_to_cart
-
-PRODUCT_NAME = 'Блокнот нелинованный \"Master Classic\" черный A4+'
-PRODUCTS = (
-    'Блокнот нелинованный \"Master Classic\" черный A4+',
-    'Блокнот \"Master Classic\" A4+, 117 листов, в линейку, черный',
-    'Блокнот "Classic" Large, 120 листов, пунктир, 13 х 21 см, синий'
-)
+from respublica_tests.test_data.data import PRODUCT_NAME, PRODUCTS, PRODUCTS_REVERSED
 
 
 @allure.tag("web")
@@ -41,7 +34,7 @@ def test_add_single_item_to_cart(clear_cart_when_finished):
     with allure.step('Найти товар'):
         app.header.search(PRODUCT_NAME)
     with allure.step('Выбрать найденный товар'):
-        app.search_page.select_product(PRODUCT_NAME)
+        app.search_page.select(PRODUCT_NAME)
     with allure.step('Добавить товар в корзину'):
         app.product_page.add_to_cart()
     with allure.step('Перейти в корзину'):
@@ -69,7 +62,7 @@ def test_add_multiple_items_to_cart(clear_cart_when_finished):
         app.header.login_if_not_logged_in()
     with allure.step('Найти и добавить товар в корзину'):
         app.header.search(PRODUCT_NAME)
-        app.search_page.select_product(PRODUCT_NAME)
+        app.search_page.select(PRODUCT_NAME)
         app.product_page.add_to_cart()
         app.product_page.increase_amount_by(amount_per_item - 1)
     with allure.step('Перейти в корзину'):
@@ -90,30 +83,23 @@ def test_add_multiple_items_to_cart(clear_cart_when_finished):
 @allure.story("Добавление нескольких разных товаров в корзину")
 def test_add_multiple_different_items_to_cart(clear_cart_when_finished):
     total_amount_of_items = len(PRODUCTS)
+    checkbox_statuses = app.make_list_of_all_checkbox_statuses(total_amount_of_items)
+    amounts_of_items = app.make_list_of_all_individual_item_amounts
 
     # WHEN
     with allure.step('Логин'):
         app.header.login_if_not_logged_in()
     with allure.step('Найти и добавить товары в корзину'):
-        for product in PRODUCTS:
-            app.header.search(product)
-            app.search_page.select_product(product)
-            app.product_page.add_to_cart()
-            app.product_page.checkout.wait_until(be.visible)
+        app.add_to_cart_all(PRODUCTS)
     with allure.step('Перейти в корзину'):
         app.product_page.go_to_cart()
 
     # THEN
     with allure.step('Проверить количество товаров в корзине, что товар выбран, имя и количество товара соответствует'):
         app.cart_page.all_items_counter.should(have.text(f'({total_amount_of_items} товара)'))
-
-        list_of_all_checkbox_statuses = ['true' for _ in range(total_amount_of_items)]
-        app.cart_page.all_checkboxes.should(have.values(*list_of_all_checkbox_statuses))
-
-        app.cart_page.all_item_names.should(have.texts(*reversed(PRODUCTS)))
-
-        list_of_all_individual_item_amounts = ['1' for _ in range(total_amount_of_items)]
-        app.cart_page.all_item_counts.should(have.values(*list_of_all_individual_item_amounts))
+        app.cart_page.all_checkboxes.should(have.values(*checkbox_statuses))
+        app.cart_page.all_item_names.should(have.texts(*PRODUCTS_REVERSED))
+        app.cart_page.all_item_counts.should(have.values(*amounts_of_items))
 
 
 @allure.tag("web")
@@ -124,7 +110,7 @@ def test_add_multiple_different_items_to_cart(clear_cart_when_finished):
 def test_delete_item_from_cart():
     # WHEN
     with allure.step('Добавить товар в корзину и перейти в нее'):
-        add_item_to_cart(PRODUCT_NAME)
+        app.add_to_cart(PRODUCT_NAME)
     with allure.step('Удалить товар из корзины'):
         app.cart_page.remove_first_item()
 
@@ -142,9 +128,9 @@ def test_delete_item_from_cart():
 def test_clear_cart():
     # WHEN
     with allure.step('Добавить товар в корзину и перейти в нее'):
-        add_item_to_cart(PRODUCT_NAME)
+        app.add_to_cart(PRODUCT_NAME)
     with allure.step('Очистить корзину'):
-        app.cart_page.clear_cart()
+        app.clear_cart()
 
     # THEN
     with allure.step('Подтвердить, что корзина очищена'):

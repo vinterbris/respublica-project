@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.options import Options
 
 from config import Config
 from respublica_tests.application import app
-from utils import attach
+from respublica_tests.utils import attach
 
 config = Config()
 
@@ -86,5 +86,5 @@ def clear_cart_when_finished():
 
     with allure.step('Очистить корзину и подвердить очищение'):
         if app.cart_page.cart_has_items():
-            app.cart_page.clear_cart()
+            app.clear_cart()
             app.cart_page.check_is_cart_empty()
