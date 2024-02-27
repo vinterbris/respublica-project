@@ -24,8 +24,6 @@ class Application:
         app.product_page.add_to_cart()
         app.product_page.go_to_cart()
 
-
-
     def clear_cart(self):
         self.header.go_to_cart()
         self.cart_page.button_clear_cart.click()

@@ -40,7 +40,6 @@ def browser_management(request):
     options.page_load_strategy = 'eager'
 
     if run_selenoid:
-        options.add_argument("--start-maximized")
         options.add_argument("--disable-infobars")
         options.add_argument("--disable-extensions")
         options.add_argument('--no-sandbox')
@@ -61,13 +60,6 @@ def browser_management(request):
             command_executor=selenoid_url + "/wd/hub/",
             options=options
         )
-
-        # login = os.getenv('SELENOID_LOGIN')
-        # password = os.getenv('SELENOID_PASSWORD')
-        # driver = webdriver.Remote(
-        #     command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
-        #     options=options
-        # )
 
         browser.config.driver = driver
     else:

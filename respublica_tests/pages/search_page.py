@@ -4,6 +4,7 @@ from respublica_tests.pages.loading_page import LoadingPage
 
 loading_page = LoadingPage()
 
+
 class SearchPage:
 
     def add_to_cart(self, products):
