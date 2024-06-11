@@ -18,7 +18,7 @@ def load_env():
 
 
 def pytest_addoption(parser):
-    parser.addoption('--browser_version', default='120.0')
+    parser.addoption('--browser_version', default='124.0')
     parser.addoption('--selenoid', default=False)
     parser.addoption('--selenoid_url', default='http://localhost:4444')
     parser.addoption('--selenoid_ui_url', default='http://localhost:8080')
