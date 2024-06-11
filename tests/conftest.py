@@ -57,7 +57,7 @@ def browser_management(request):
         options.capabilities.update(selenoid_capabilities)
 
         driver = webdriver.Remote(
-            command_executor=selenoid_url + "/wd/hub/",
+            command_executor=selenoid_url + "/wd/hub",
             options=options
         )
 
