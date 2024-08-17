@@ -10,10 +10,10 @@ class CartPage:
         self.all_item_counts = browser.all('.count-input')
         self.all_checkboxes = browser.all('[type=checkbox]')
         self.all_item_names = browser.all('.item-name')
-        self.item_count = browser.element('.count-input')
-        self.item_name = browser.element('.item-name')
+        # self.item_count = browser.element('.count-input')
+        # self.item_name = browser.element('.item-name')
         self.checkbox = browser.element('[type=checkbox]')
-        self.all_items_counter = browser.element('.cart-count')
+        self.all_items_counter = browser.element('.cart-content>div span')
 
     def remove_first_item(self):
         self.checkbox.with_(click_by_js=True).click()
@@ -23,3 +23,6 @@ class CartPage:
 
     def cart_has_items(self):
         return self.empty.matching(be.absent)
+
+    def item_name_should_have_text(self, value):
+        browser.element(f'[title="{value}"]').should(have.text(value))
