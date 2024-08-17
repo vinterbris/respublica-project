@@ -64,7 +64,7 @@ def test_add_multiple_items_to_cart():
         app.header.search(PRODUCT_NAME)
         app.search_page.select(PRODUCT_NAME)
         app.product_page.add_to_cart()
-        app.product_page.increase_amount_by(amount_per_item - 1)
+        app.product_page.increase_amount_by(amount_per_item)
     with allure.step('Перейти в корзину'):
         app.product_page.go_to_cart()
 

@@ -24,5 +24,5 @@ class ProductPage:
         loading_page.wait_until_finished()
 
     def increase_amount_by(self, amount):
-        for _ in range(amount):
+        for _ in range(amount - 1):
             self._button_increase_amount.click()
