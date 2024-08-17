@@ -10,11 +10,6 @@ from respublica_tests.application import app
 from respublica_tests.utils import attach
 
 
-@pytest.fixture(scope='session', autouse=True)
-def load_env():
-    load_dotenv()
-
-
 def pytest_addoption(parser):
     parser.addoption('--browser_version', default='124.0')
     parser.addoption('--selenoid', default=False)
@@ -71,6 +66,10 @@ def browser_management(request):
 
 @pytest.fixture(scope='function')
 def clear_cart_when_finished():
+    '''
+    Очищает корзину - используется только когда происходит логин
+    :return:
+    '''
     yield
 
     with allure.step('Очистить корзину и подвердить очищение'):

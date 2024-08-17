@@ -24,7 +24,7 @@ def test_login():
 @allure.label("owner", "dobrovolskiysv")
 @allure.feature("Корзина")
 @allure.story("Добавление одного товара в корзину")
-def test_add_single_item_to_cart(clear_cart_when_finished):
+def test_add_single_item_to_cart():
     items = 1
     amount_per_item = 1
     app.open()
@@ -40,7 +40,9 @@ def test_add_single_item_to_cart(clear_cart_when_finished):
         app.product_page.go_to_cart()
 
     # THEN
-    with allure.step('Проверить количество товаров в корзине, что товар выбран, имя и количество товара соответствует'):
+    with allure.step(
+        'Проверить количество товаров в корзине, что товар выбран, имя и количество товара соответствует'
+    ):
         app.cart_page.all_items_counter.should(have.text(f'({items} товар)'))
         app.cart_page.checkbox.should(have.value('true'))
         app.cart_page.item_name.should(have.text(PRODUCT_NAME))
@@ -52,7 +54,7 @@ def test_add_single_item_to_cart(clear_cart_when_finished):
 @allure.label("owner", "dobrovolskiysv")
 @allure.feature("Корзина")
 @allure.story("Добавление нескольких одинаковых товаров в корзину")
-def test_add_multiple_items_to_cart(clear_cart_when_finished):
+def test_add_multiple_items_to_cart():
     items = 1
     amount_per_item = 4
     app.open()
@@ -67,7 +69,9 @@ def test_add_multiple_items_to_cart(clear_cart_when_finished):
         app.product_page.go_to_cart()
 
     # THEN
-    with allure.step('Проверить количество товаров в корзине, что товар выбран, имя и количество товара соответствует'):
+    with allure.step(
+        'Проверить количество товаров в корзине, что товар выбран, имя и количество товара соответствует'
+    ):
         app.cart_page.all_items_counter.should(have.text(f'({items} товар)'))
         app.cart_page.checkbox.should(have.value('true'))
         app.cart_page.item_name.should(have.text(PRODUCT_NAME))
@@ -79,10 +83,12 @@ def test_add_multiple_items_to_cart(clear_cart_when_finished):
 @allure.label("owner", "dobrovolskiysv")
 @allure.feature("Корзина")
 @allure.story("Добавление нескольких разных товаров в корзину")
-def test_add_multiple_different_items_to_cart(clear_cart_when_finished):
+def test_add_multiple_different_items_to_cart():
     total_amount_of_items = len(PRODUCTS)
     checkbox_statuses = app.make_list_of_all_checkbox_statuses(total_amount_of_items)
-    amounts_of_items = app.make_list_of_all_individual_item_amounts(total_amount_of_items)
+    amounts_of_items = app.make_list_of_all_individual_item_amounts(
+        total_amount_of_items
+    )
     app.open()
 
     # WHEN
@@ -92,8 +98,12 @@ def test_add_multiple_different_items_to_cart(clear_cart_when_finished):
         app.product_page.go_to_cart()
 
     # THEN
-    with allure.step('Проверить количество товаров в корзине, что товар выбран, имя и количество товара соответствует'):
-        app.cart_page.all_items_counter.should(have.text(f'({total_amount_of_items} товара)'))
+    with allure.step(
+        'Проверить количество товаров в корзине, что товар выбран, имя и количество товара соответствует'
+    ):
+        app.cart_page.all_items_counter.should(
+            have.text(f'({total_amount_of_items} товара)')
+        )
         app.cart_page.all_checkboxes.should(have.values(*checkbox_statuses))
         app.cart_page.all_item_names.should(have.texts(*PRODUCTS_REVERSED))
         app.cart_page.all_item_counts.should(have.values(*amounts_of_items))
