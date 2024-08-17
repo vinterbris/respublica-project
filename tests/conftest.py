@@ -1,6 +1,5 @@
 import allure
 import pytest
-from dotenv import load_dotenv
 from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options

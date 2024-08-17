@@ -8,7 +8,9 @@ from respublica_tests.pages.loading_page import LoadingPage
 class ProductPage:
 
     def __init__(self):
-        self._button_increase_amount = browser.element('[title="Увеличить количество товара"]')
+        self._button_increase_amount = browser.element(
+            '[title="Увеличить количество товара"]'
+        )
         self._button_buy = browser.element('.buy')
         self.checkout = browser.element('.buy.isActive')
 
