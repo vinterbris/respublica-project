@@ -5,11 +5,9 @@ from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from config import Config
+import project
 from respublica_tests.application import app
 from respublica_tests.utils import attach
-
-config = Config()
 
 
 @pytest.fixture(scope='session', autouse=True)
@@ -31,10 +29,10 @@ def browser_management(request):
     selenoid_url = request.config.getoption('--selenoid_url')
     selenoid_ui_url = request.config.getoption('--selenoid_ui_url')
 
-    browser.config.timeout = config.timeout
-    browser.config.window_width = config.window_width
-    browser.config.window_height = config.window_height
-    browser.config.base_url = config.base_url
+    browser.config.timeout = project.config.timeout
+    browser.config.window_width = project.config.window_width
+    browser.config.window_height = project.config.window_height
+    browser.config.base_url = project.config.base_url
 
     options = Options()
     options.page_load_strategy = 'eager'
@@ -49,16 +47,12 @@ def browser_management(request):
         selenoid_capabilities = {
             "browserName": 'chrome',
             "browserVersion": browser_version,
-            "selenoid:options": {
-                "enableVNC": True,
-                "enableVideo": True
-            }
+            "selenoid:options": {"enableVNC": True, "enableVideo": True},
         }
         options.capabilities.update(selenoid_capabilities)
 
         driver = webdriver.Remote(
-            command_executor=selenoid_url + "/wd/hub",
-            options=options
+            command_executor=selenoid_url + "/wd/hub", options=options
         )
 
         browser.config.driver = driver
