@@ -3,7 +3,7 @@ import time
 
 from selene import browser, be, have
 
-from respublica_tests.pages.loading_page import LoadingPage
+from respublica_ui_tests.pages.loading_page import LoadingPage
 
 
 class Header:

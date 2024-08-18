@@ -5,8 +5,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 import project
-from respublica_tests.application import app
-from respublica_tests.utils import attach
+from respublica_ui_tests.application import app
+from respublica_ui_tests.utils import attach
 
 
 def pytest_addoption(parser):

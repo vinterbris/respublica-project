@@ -1,10 +1,10 @@
 from selene import browser, be
 
-from respublica_tests.components.header import Header
-from respublica_tests.pages.cart_page import CartPage
-from respublica_tests.pages.loading_page import LoadingPage
-from respublica_tests.pages.product_page import ProductPage
-from respublica_tests.pages.search_page import SearchPage
+from respublica_ui_tests.components.header import Header
+from respublica_ui_tests.pages.cart_page import CartPage
+from respublica_ui_tests.pages.loading_page import LoadingPage
+from respublica_ui_tests.pages.product_page import ProductPage
+from respublica_ui_tests.pages.search_page import SearchPage
 
 
 class Application:
@@ -29,11 +29,16 @@ class Application:
         self.cart_page.button_clear_cart.click()
         self.cart_page.confirm_clear_cart.click()
 
-    def make_list_of_all_checkbox_statuses(self, total_amount_of_items):
+    @staticmethod
+    def get_total_amount_of_items(PRODUCTS):
+        return len(PRODUCTS)
+
+    @staticmethod
+    def make_list_of_all_checkbox_statuses(total_amount_of_items):
         return ['true' for _ in range(total_amount_of_items)]
 
-    def make_list_of_all_individual_item_amounts(self, total_amount_of_items):
-        return ['1' for _ in range(total_amount_of_items)]
+    # def make_list_of_all_individual_item_amounts(self, total_amount_of_items):
+    #     return ['1' for _ in range(total_amount_of_items)]
 
     def add_to_cart_all(self, PRODUCTS):
         for product in PRODUCTS:

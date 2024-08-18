@@ -2,6 +2,9 @@ PRODUCT_NAME = 'Блокнот нелинованный \"Master Classic\" че�
 PRODUCTS = (
     'Блокнот нелинованный \"Master Classic\" черный A4+',
     'Блокнот \"Master Classic\" A4+, 117 листов, в линейку, черный',
-    'Блокнот "Classic" Large, 120 листов, пунктир, 13 х 21 см, синий'
+    'Блокнот Leuchtturm1917 Medium, A5, 125л, в клетку, твердая обложка, чернильный',
 )
-PRODUCTS_REVERSED = reversed(PRODUCTS)
+# PRODUCTS_REVERSED = reversed(PRODUCTS)
+
+items = 1
+amount_per_item = 2
