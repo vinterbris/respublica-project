@@ -14,6 +14,7 @@ class CartPage:
         # self.item_name = browser.element('.item-name')
         self.checkbox = browser.element('[type=checkbox]')
         self.all_items_counter = browser.element('.cart-content>div span')
+        self.cart_order_item_cost = browser.element('.cart-order-item-cost')
 
     def remove_first_item(self):
         self.checkbox.with_(click_by_js=True).click()

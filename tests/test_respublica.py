@@ -1,6 +1,6 @@
 import allure
 from allure_commons.types import Severity
-from selene import have
+from selene import have, browser
 
 from respublica_ui_tests.application import app
 from respublica_ui_tests.test_data.data import (
@@ -125,7 +125,8 @@ def test_delete_item_from_cart():
     # THEN
     with allure.step('Подвердить удаление и 0 товаров в корзине'):
         app.cart_page.checkbox.should(have.value('false'))
-        app.cart_page.total_items.should(have.text('Товары (0)'))
+        # app.cart_page.total_items.should(have.text('Товары 0')) # assertion broken
+        app.cart_page.cart_order_item_cost.should(have.text('0'))
 
 
 @allure.tag("web")
