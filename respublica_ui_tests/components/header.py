@@ -3,6 +3,7 @@ import time
 
 from selene import browser, be, have
 
+import project
 from respublica_ui_tests.pages.loading_page import LoadingPage
 
 
@@ -23,8 +24,8 @@ class Header:
         browser.open('/')
         time.sleep(2)
         self._button_authorisation.click()  # flaky trash that doesn't accept proper explicit waits
-        self._field_login_name.type(os.getenv('LOGIN'))
-        self._field_login_password.type(os.getenv('PASSWORD'))
+        self._field_login_name.type(project.config.login)
+        self._field_login_password.type(project.config.password)
         self._button_signin.click()
 
     def login_if_not_logged_in(self):

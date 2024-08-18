@@ -44,7 +44,7 @@ def test_add_single_item_to_cart():
 
     # THEN
     with allure.step(
-            'Проверить количество товаров в корзине, что товар выбран, имя и количество товара соответствует'
+        'Проверить количество товаров в корзине, что товар выбран, имя и количество товара соответствует'
     ):
         app.cart_page.all_items_counter.should(have.text(f'{items} товар'))
         app.cart_page.checkbox.should(have.value('true'))
@@ -71,7 +71,7 @@ def test_add_multiple_items_to_cart():
 
     # THEN
     with allure.step(
-            'Проверить количество товаров в корзине, что товар выбран, имя и количество товара соответствует'
+        'Проверить количество товаров в корзине, что товар выбран, имя и количество товара соответствует'
     ):
         app.cart_page.all_items_counter.should(have.text(f'{items} товар'))
         app.cart_page.checkbox.should(have.value('true'))
@@ -95,7 +95,7 @@ def test_add_multiple_different_items_to_cart():
 
     # THEN
     with allure.step(
-            'Проверить количество товаров в корзине, что товар выбран, имя и количество товара соответствует'
+        'Проверить количество товаров в корзине, что товар выбран, имя и количество товара соответствует'
     ):
         total_amount_of_items = app.get_total_amount_of_items(PRODUCTS)
         checkbox_statuses = app.make_list_of_all_checkbox_statuses(total_amount_of_items)
