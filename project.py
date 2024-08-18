@@ -2,13 +2,11 @@ import pydantic_settings
 
 from respublica_ui_tests.utils import path
 
-WEB_URL = "https://www.respublica.ru"
-
 
 class Config(pydantic_settings.BaseSettings):
     login: str = None
     password: str = None
-    base_url: str = WEB_URL
+    base_url: str = "https://www.respublica.ru"
     window_width: int = 1920
     window_height: int = 1080
     timeout: float = 10.0
