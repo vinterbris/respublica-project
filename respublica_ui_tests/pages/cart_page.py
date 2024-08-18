@@ -4,7 +4,7 @@ from selene import browser, have, be
 class CartPage:
     def __init__(self):
         self.confirm_clear_cart = browser.element('.deleted-button')
-        self.button_clear_cart = browser.element('.delete-selected')
+        self.button_clear_cart = browser.element('[title="удалить всё"]')
         self.empty = browser.element('.cart-none-title')
         self.total_items = browser.element('.cart-order-item-title')
         self.all_item_counts = browser.all('.count-input')
