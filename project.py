@@ -19,3 +19,9 @@ class Config(pydantic_settings.BaseSettings):
 
 
 config = Config(_env_file=dotenv.find_dotenv())
+
+if __name__ == '__main__':
+    """
+    Run config.py to check config values on start. Used for debugging
+    """
+    print(config.__repr__())
