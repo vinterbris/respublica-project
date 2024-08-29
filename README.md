@@ -68,7 +68,7 @@ SELENOID_URL=http://localhost:4444
 ```
 
 <details open>
-  <summary>Allure report и Allure TestOps</summary>
+  <summary>Пример отчёта Allure report и Allure TestOps</summary>
 
 <img src="resources/images/screenshot_allure.png" height="" width="1000"/>
 <img src="resources/images/screenshot_allure_b.png" height="" width="1000"/>
