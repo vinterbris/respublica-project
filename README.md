@@ -20,7 +20,8 @@
 
 
 ---
-> <a target="_blank" href="http://176.123.163.26:8888/job/respublica-project/">Ссылка на проект в Jenkins</a>
+> <a target="_blank" href="http://176.123.163.26:8888/job/respublica-project/">> <a target="_blank" href="http://176.123.163.26:8888/job/Reqres-project/">Ссылка на проект в мой Jenkins: доступны прогоны и allure отчёты</a>
+</a>
 
 ### Реализованы тесты:
 
