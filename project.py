@@ -15,7 +15,6 @@ class Config(pydantic_settings.BaseSettings):
     selenoid: bool = False
     browser_version: str = '127.0'
     selenoid_url: str = 'http://localhost:4444'
-    selenoid_ui_url: str = 'http://localhost:8080'
 
 
 config = Config(_env_file=dotenv.find_dotenv())
