@@ -20,7 +20,7 @@
 
 
 ---
-> <a target="_blank" href="http://176.123.163.26:8888/job/respublica-project/">> <a target="_blank" href="http://176.123.163.26:8888/job/Reqres-project/">Ссылка на проект в мой Jenkins: доступны прогоны и allure отчёты</a>
+> <a target="_blank" href="http://176.123.163.26:8888/job/respublica-project/">Ссылка на проект в мой Jenkins: доступны прогоны и allure отчёты</a>
 </a>
 
 ### Реализованы тесты:
@@ -67,11 +67,15 @@ BROWSER_VERSION=127.0
 SELENOID_URL=http://localhost:4444
 ```
 
-## Пример запуска тестов
+<details open>
+  <summary>Allure report и Allure TestOps</summary>
 
-https://github.com/vinterbris/qa_guru_python_9_15/assets/21102027/bb5e26de-4ce1-4e00-b360-76e9d196f444
+<img src="resources/images/screenshot_allure.png" height="" width="1000"/>
+<img src="resources/images/screenshot_allure_b.png" height="" width="1000"/>
+<img src="resources/images/screenshot_allure_t.png" height="" width="1000"/>
 
-https://github.com/vinterbris/qa_guru_python_9_15/assets/21102027/fc5dbb2a-3acd-4968-b9da-d3a38175f64f
+</details>
+
 
 ## Оповещения в мессенджер
 
@@ -80,5 +84,10 @@ https://github.com/vinterbris/qa_guru_python_9_15/assets/21102027/fc5dbb2a-3acd-
 <img src="resources/images/screenshot_telegram.png" height="350"/>
 
 
+## Пример запуска тестов
+
+https://github.com/vinterbris/qa_guru_python_9_15/assets/21102027/bb5e26de-4ce1-4e00-b360-76e9d196f444
+
+https://github.com/vinterbris/qa_guru_python_9_15/assets/21102027/fc5dbb2a-3acd-4968-b9da-d3a38175f64f
 
 
